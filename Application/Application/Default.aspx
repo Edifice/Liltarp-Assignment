@@ -2,15 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <div class="col-xs-12">
-            Pleases select a vendor:
-            <asp:DropDownList
-                runat="server"
-                ID="dropDown"
-                DataTextField="Name"
-                DataValueField="Id"
-                AutoPostBack="True"
-                OnSelectedIndexChanged="dropDown_OnSelectedIndexChanged" />
+        <div class="col-xs-12">hello
         </div>
     </div>
     <div class="row">

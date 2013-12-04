@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Application.AutomobileServiceReference;
+using Application.BusinessServiceReference;
 
 namespace Application
 {
@@ -19,33 +19,9 @@ namespace Application
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                dropDown.DataSource = serverObject.GetAllVendors();
-                dropDown.DataBind();
-            }
-            /*if (Session["SelectedVendor"] != null)
-            {
-                dropDown.SelectedIndex = (int)Session["SelectedVendor"];
-            }*/
-        }
-
-        protected void dropDown_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridView.DataSource = serverObject.GetAutomobiles().Where(a => a.vendorId == Convert.ToInt32(dropDown.SelectedItem.Value));
-            GridView.DataBind();
-            /* Session["SelectedVendor"] = dropDown.SelectedIndex;
-            Response.RedirectPermanent("Default.aspx");*/
+            //GridView.DataSource = serverObject.
         }
 
 
-    }
-
-    public class LocalVendor : VendorSerializable
-    {
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

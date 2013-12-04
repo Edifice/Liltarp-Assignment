@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
-using BLL;
 
 namespace BLL
 {
@@ -14,9 +8,15 @@ namespace BLL
     public interface IBusinessService
     {
         [OperationContract]
-        List<AutomobileSerializable> GetAutomobiles();
+        List<HouseTypeSerializable> GetHouseTypes();
 
         [OperationContract]
-        List<VendorSerializable> GetAllVendors();
+        List<HouseSerializable> GetHouses();
+
+        [OperationContract]
+        List<TicketSerializable> GetTickets();
+
+        [OperationContract]
+        List<UserSerializable> GetUsers();
     }
 }
