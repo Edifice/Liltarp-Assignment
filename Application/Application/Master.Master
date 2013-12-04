@@ -1,22 +1,98 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Application.Master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Automobiles - Compulsory assignment</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 617px;
+            height: 199px;
+        }
+
+        .auto-style2 {
+            width: 465px;
+            height: 199px;
+        }
+
+        .auto-style4 {
+            height: 46px;
+        }
+
+        .auto-style10 {
+            height: 46px;
+            width: 120px;
+        }
+
+        .auto-style11 {
+            width: 54px;
+            height: 44px;
+            float: none;
+        }
+
+        .auto-style12 {
+            height: 46px;
+            width: 37px;
+        }
+
+        .auto-style13 {
+            height: 46px;
+            width: 21px;
+        }
+
+        .auto-style14 {
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #272B30">
+
     <form id="form1" runat="server">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h1>Automobiles</h1>
-                </div>
-            </div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        <div>
+            <img alt="NPL" class="auto-style1" src="Images/site_logo.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img alt="lil" class="auto-style2" src="Images/liltarp.png" /><br />
+            <table style="width: 100%;">
+                <tr>
+                    <td class="auto-style13" style="background-image: none; background-attachment: scroll">&nbsp;</td>
+                    <td class="auto-style12" style="background-image: none; background-attachment: scroll">
+                        <img alt="" class="auto-style11" src="Images/Home_icon_black.png"/></td>
+                    <td class="auto-style10" style="background-image: none; background-attachment: scroll">
+                        <h1>
+                            <asp:Button ID="Button1" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="37px" OnClick="Button1_Click" Style="font-size: large" Text="Fritidshuse" Width="120px" />
+                        </h1>
+                    </td>
+                    <td class="auto-style10" style="background-image: none; background-attachment: scroll">
+                        <asp:Button ID="Button2" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="37px" Style="font-size: large; text-align: center" Text="Nybyggeri" Width="120px" />
+                    </td>
+                    <td class="auto-style10" style="background-image: none; background-attachment: scroll">
+                        <asp:Button ID="Button3" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="35px" Style="font-size: large" Text="Ombygninger" Width="119px" />
+                    </td>
+                    <td class="auto-style10" style="background-image: none; background-attachment: scroll">
+                        <asp:Button ID="Button4" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="36px" Style="font-size: large" Text="Garantiordning" />
+                    </td>
+                    <td class="auto-style10" style="background-image: none; background-attachment: scroll">
+                        <asp:Button ID="Button5" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="36px" Style="font-size: large" Text="Kontakt Os" Width="120px" />
+                    </td>
+                    <td class="auto-style4" style="background-image: none; background-attachment: scroll"></td>
+                </tr>
+            </table>
+            <br />
+            <table class="auto-style14">
+                <tr>
+                    <td style="background-color: #1C1E22">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            <br />
+
         </div>
     </form>
+    <p>
+        &nbsp;
+    </p>
 </body>
 </html>
