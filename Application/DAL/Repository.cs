@@ -8,21 +8,31 @@ namespace DAL
 {
     public class Repository
     {
-        private AutomobilesEntities model;
+        private liltarpEntities model;
         public Repository()
         {
-            model = new AutomobilesEntities();
+            model = new liltarpEntities();
             
         }
 
-        public List<Vendor> GetVendors()
+        public List<HouseType> GetHouseTypes()
         {
-            return model.Vendor.ToList();
+            return model.HouseType.ToList();
         }
 
-        public List<Automobile> GetAutomobiles()
+        public List<House> GetHouses()
         {
-            return model.Automobile.ToList();
+            return model.House.ToList();
+        }
+
+        public List<Ticket> GetTickets()
+        {
+            return model.Ticket.ToList();
+        }
+
+        public List<User> GetUsers()
+        {
+            return model.User.ToList();
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 
 namespace BLL
@@ -16,44 +13,70 @@ namespace BLL
             rep = new Repository();
         }
 
-        public List<AutomobileSerializable> GetAutomobiles()
-        {
-            List<AutomobileSerializable> tmpList = new List<AutomobileSerializable>();
-            foreach (Automobile a in rep.GetAutomobiles())
-                tmpList.Add(TranslateAutomobile(a));
-            return tmpList;
-        }
 
-        public List<VendorSerializable> GetAllVendors()
+        private HouseTypeSerializable TranslateHouseTypes(HouseType old)
         {
-            List<VendorSerializable> tmpList = new List<VendorSerializable>();
-            foreach (Vendor v in rep.GetVendors())
-                tmpList.Add(TranslateVendor(v));
-            return tmpList;
-        }
-
-        private VendorSerializable TranslateVendor(DAL.Vendor oldVendor)
-        {
-            return new VendorSerializable()
+            return new HouseTypeSerializable
             {
-                Id = oldVendor.Id,
-                Name = oldVendor.Name
+                Id = old.Id,
+                Name = old.Name
             };
         }
 
-        private AutomobileSerializable TranslateAutomobile(DAL.Automobile oldAutomobile)
+        private HouseSerializable TranslateHouses(House old)
         {
-            return new AutomobileSerializable()
+            return new HouseSerializable
             {
-                id = oldAutomobile.id,
-                model = oldAutomobile.model,
-                acceleration = Convert.ToDecimal(oldAutomobile.acceleration),
-                enginePower = Convert.ToInt32(oldAutomobile.enginePower),
-                fuelEconomy = Convert.ToDecimal(oldAutomobile.fuelEconomy),
-                maxSpeed = Convert.ToInt32(oldAutomobile.maxSpeed),
-                price = Convert.ToDecimal(oldAutomobile.price),
-                vendorId = oldAutomobile.vendorId
+                Id = old.Id,
+                Name = old.Name,
+                TypeId = old.TypeID,
+                Description = old.Description,
+                Image = old.Image
             };
+        }
+
+        private TicketSerializable TranslateTickets(Ticket old)
+        {
+            return new TicketSerializable
+            {
+                Id = old.Id,
+                Name = old.Name,
+                Email = old.E_mail,
+                Phone = old.Phone,
+                HouseId = old.HouseID,
+                SolvedBy = old.SolvedBy,
+                Solved = old.Solved,
+            };
+        }
+
+        private UserSerializable TranslateUsers(User old)
+        {
+            return new UserSerializable
+            {
+                Id = old.Id,
+                Email = old.E_mail,
+                Password = old.Password
+            };
+        }
+
+        public List<HouseTypeSerializable> GetHouseTypes()
+        {
+            return rep.GetHouseTypes().Select(TranslateHouseTypes).ToList();
+        }
+
+        public List<HouseSerializable> GetHouses()
+        {
+            return rep.GetHouses().Select(TranslateHouses).ToList();
+        }
+
+        public List<TicketSerializable> GetTickets()
+        {
+            return rep.GetTickets().Select(TranslateTickets).ToList();
+        }
+
+        public List<UserSerializable> GetUsers()
+        {
+            return rep.GetUsers().Select(TranslateUsers).ToList();
         }
     }
 }
