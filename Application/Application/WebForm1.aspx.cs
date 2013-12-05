@@ -16,8 +16,31 @@ namespace Application
 
         protected void BtnOk_Click(object sender, EventArgs e)
         {
-
+            
+            string strcon = "Data Source=.;uid=sa;pwd=Password$2;database=master";
+            SqlConnection con = new SqlConnection(strcon);
+ 
+            SqlCommand com = new SqlCommand("CheckUser", con);
+            com.CommandType = CommandType.StoredProcedure;
+            SqlParameter p1 = new SqlParameter("E-mail", TextEmail.Text);
+            SqlParameter p2 = new SqlParameter("Password", TextPassword.Text);
+            com.Parameters.Add(p1);
+            com.Parameters.Add(p2);
+            con.Open();
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+               Labelinfo.Text = "Login successful.";
+            }
+ 
+            else
+            {
+                Labelinfo.Text = "Invalid username or password.";
+ 
+            }
         }
+        
 
         protected void BtnBack_Click(object sender, EventArgs e)
         {
