@@ -18,7 +18,7 @@ namespace BLL
         {
             return new HouseTypeSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Name = old.Name
             };
         }
@@ -39,7 +39,7 @@ namespace BLL
         {
             return new TicketSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Name = old.Name,
                 Email = old.E_mail,
                 Phone = old.Phone,
@@ -53,7 +53,7 @@ namespace BLL
         {
             return new UserSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Email = old.E_mail,
                 Password = old.Password
             };
@@ -77,6 +77,20 @@ namespace BLL
         public List<UserSerializable> GetUsers()
         {
             return rep.GetUsers().Select(TranslateUsers).ToList();
+        }
+
+        public int? CheckLogin(string email, string password)
+        {
+            var usr = this.GetUsers().Where(
+                a => a.Email == email &&
+                a.Password == password
+                );
+            var userSerializables = usr as IList<UserSerializable> ?? usr.ToList();
+            if (userSerializables.Count() == 1)
+            {
+                return userSerializables.GetEnumerator().Current.Id;
+            }
+            return null;
         }
     }
 }

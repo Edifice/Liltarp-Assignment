@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7e284c156c0f4352ad17836e0e20f93c" Name="Diagram1">
+      <Diagram DiagramId="b73d3d8761704d53b6702cbd3d12607a" Name="Diagram1">
         <EntityTypeShape EntityType="liltarpModel.House" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="liltarpModel.HouseType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="liltarpModel.Ticket" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="liltarpModel.User" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="liltarpModel.FK_House_To_HouseType" ManuallyRouted="false" />
-        <AssociationConnector Association="liltarpModel.FK_Ticket_To_House" ManuallyRouted="false" />
-        <AssociationConnector Association="liltarpModel.FK_Ticket_To_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="liltarpModel.Ticket" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="liltarpModel.FK_House_HouseType" ManuallyRouted="false" />
+        <AssociationConnector Association="liltarpModel.FK_Ticket_House" ManuallyRouted="false" />
+        <AssociationConnector Association="liltarpModel.FK_Ticket_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
