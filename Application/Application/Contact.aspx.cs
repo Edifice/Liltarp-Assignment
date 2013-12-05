@@ -8,7 +8,7 @@ using Application.BusinessServiceReference;
 
 namespace Application
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Contact : System.Web.UI.Page
     {
         private BusinessServiceClient service;
 
@@ -16,12 +16,21 @@ namespace Application
         {
             service = new BusinessServiceClient();
         }
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GridView.DataSource = serverObject.
+            ddHouse.DataSource = service.GetHouses();
+            ddHouse.DataBind();
         }
 
-
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            var ticket = new TicketSerializable()
+            {
+                Email = txtEmail.Text,
+                Name = txtName.Text,
+                Phone = txtPhone.Text
+            };
+        }
     }
 }

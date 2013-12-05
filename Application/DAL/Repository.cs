@@ -8,10 +8,10 @@ namespace DAL
 {
     public class Repository
     {
-        private liltarpEntities1 model;
+        private liltarpEntities model;
         public Repository()
         {
-            model = new liltarpEntities1();
+            model = new liltarpEntities();
             
         }
 

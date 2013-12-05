@@ -72,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\Home_icon_black.png" />
     <Content Include="Images\liltarp.png" />
@@ -239,6 +240,18 @@
     <Content Include="Images\pictures\sm-v\6Sd.jpg" />
     <Content Include="Images\pictures\sm-v\6Smap.jpg" />
     <Content Include="Images\site_logo.png" />
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.HouseSerializable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.HouseTypeSerializable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.TicketSerializable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.UserSerializable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\BusinessServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -247,6 +260,13 @@
     <None Include="Service References\BusinessServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,12 +310,6 @@
     <Content Include="Images\pictures\sm-t\Thumbs.db" />
     <Content Include="Images\pictures\sm-v\desktop.ini" />
     <Content Include="Images\pictures\sm-v\Thumbs.db" />
-    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.AutomobileSerializable.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.VendorSerializable.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\BusinessServiceReference\BLL.xsd">
       <SubType>Designer</SubType>
     </None>

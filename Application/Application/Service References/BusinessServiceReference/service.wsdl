@@ -7,32 +7,52 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/BLL" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IBusinessService_GetAutomobiles_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAutomobiles" />
+  <wsdl:message name="IBusinessService_GetHouseTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseTypes" />
   </wsdl:message>
-  <wsdl:message name="IBusinessService_GetAutomobiles_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAutomobilesResponse" />
+  <wsdl:message name="IBusinessService_GetHouseTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseTypesResponse" />
   </wsdl:message>
-  <wsdl:message name="IBusinessService_GetAllVendors_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllVendors" />
+  <wsdl:message name="IBusinessService_GetHouses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouses" />
   </wsdl:message>
-  <wsdl:message name="IBusinessService_GetAllVendors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllVendorsResponse" />
+  <wsdl:message name="IBusinessService_GetHouses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHousesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTickets" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
   </wsdl:message>
   <wsdl:portType name="IBusinessService">
-    <wsdl:operation name="GetAutomobiles">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetAutomobiles" message="tns:IBusinessService_GetAutomobiles_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetAutomobilesResponse" message="tns:IBusinessService_GetAutomobiles_OutputMessage" />
+    <wsdl:operation name="GetHouseTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseTypes" message="tns:IBusinessService_GetHouseTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHouseTypesResponse" message="tns:IBusinessService_GetHouseTypes_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllVendors">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetAllVendors" message="tns:IBusinessService_GetAllVendors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetAllVendorsResponse" message="tns:IBusinessService_GetAllVendors_OutputMessage" />
+    <wsdl:operation name="GetHouses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouses" message="tns:IBusinessService_GetHouses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHousesResponse" message="tns:IBusinessService_GetHouses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTickets" message="tns:IBusinessService_GetTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTicketsResponse" message="tns:IBusinessService_GetTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetUsers" message="tns:IBusinessService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetUsersResponse" message="tns:IBusinessService_GetUsers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBusinessService" type="tns:IBusinessService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetAutomobiles">
-      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetAutomobiles" style="document" />
+    <wsdl:operation name="GetHouseTypes">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetHouseTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -40,8 +60,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllVendors">
-      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetAllVendors" style="document" />
+    <wsdl:operation name="GetHouses">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetHouses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTickets">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

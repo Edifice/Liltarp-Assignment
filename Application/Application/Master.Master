@@ -46,6 +46,21 @@
         .auto-style14 {
             width: 100%;
         }
+        .form {
+            width: 720px;
+            margin: 0 auto;
+        }
+        .form label{
+            width: 50%;
+            text-align: right;
+            margin-right: 5px;
+            color: #fff;
+        }
+        .form-row {
+            width: 100%;
+            position: relative;
+            margin-bottom: 3px;
+        }
     </style>
 </head>
 <body style="background-color: #272B30">

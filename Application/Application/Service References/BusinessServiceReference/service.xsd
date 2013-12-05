@@ -1,27 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/BLL" />
-  <xs:element name="GetAutomobiles">
+  <xs:element name="GetHouseTypes">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAutomobilesResponse">
+  <xs:element name="GetHouseTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetAutomobilesResult" nillable="true" type="q1:ArrayOfAutomobileSerializable" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetHouseTypesResult" nillable="true" type="q1:ArrayOfHouseTypeSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllVendors">
+  <xs:element name="GetHouses">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllVendorsResponse">
+  <xs:element name="GetHousesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetAllVendorsResult" nillable="true" type="q2:ArrayOfVendorSerializable" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetHousesResult" nillable="true" type="q2:ArrayOfHouseSerializable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTickets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetTicketsResult" nillable="true" type="q3:ArrayOfTicketSerializable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
