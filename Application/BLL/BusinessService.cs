@@ -78,5 +78,19 @@ namespace BLL
         {
             return rep.GetUsers().Select(TranslateUsers).ToList();
         }
+
+        public int? CheckLogin(string email, string password)
+        {
+            var usr = this.GetUsers().Where(
+                a => a.Email == email &&
+                a.Password == password
+                );
+            var userSerializables = usr as IList<UserSerializable> ?? usr.ToList();
+            if (userSerializables.Count() == 1)
+            {
+                return userSerializables.GetEnumerator().Current.Id;
+            }
+            return null;
+        }
     }
 }
