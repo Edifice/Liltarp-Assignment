@@ -18,7 +18,7 @@ namespace BLL
         {
             return new HouseTypeSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Name = old.Name
             };
         }
@@ -39,7 +39,7 @@ namespace BLL
         {
             return new TicketSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Name = old.Name,
                 Email = old.E_mail,
                 Phone = old.Phone,
@@ -53,7 +53,7 @@ namespace BLL
         {
             return new UserSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Email = old.E_mail,
                 Password = old.Password
             };

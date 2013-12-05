@@ -12,7 +12,7 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class liltarpEntities : DbContext
     {
         public liltarpEntities()

@@ -15,166 +15,9 @@ namespace Application.BusinessServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AutomobileSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HouseTypeSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
     [System.SerializableAttribute()]
-    public partial class AutomobileSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal accelerationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int enginePowerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal fuelEconomyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int maxSpeedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string modelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int vendorIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal acceleration {
-            get {
-                return this.accelerationField;
-            }
-            set {
-                if ((this.accelerationField.Equals(value) != true)) {
-                    this.accelerationField = value;
-                    this.RaisePropertyChanged("acceleration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int enginePower {
-            get {
-                return this.enginePowerField;
-            }
-            set {
-                if ((this.enginePowerField.Equals(value) != true)) {
-                    this.enginePowerField = value;
-                    this.RaisePropertyChanged("enginePower");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal fuelEconomy {
-            get {
-                return this.fuelEconomyField;
-            }
-            set {
-                if ((this.fuelEconomyField.Equals(value) != true)) {
-                    this.fuelEconomyField = value;
-                    this.RaisePropertyChanged("fuelEconomy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int maxSpeed {
-            get {
-                return this.maxSpeedField;
-            }
-            set {
-                if ((this.maxSpeedField.Equals(value) != true)) {
-                    this.maxSpeedField = value;
-                    this.RaisePropertyChanged("maxSpeed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string model {
-            get {
-                return this.modelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.modelField, value) != true)) {
-                    this.modelField = value;
-                    this.RaisePropertyChanged("model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int vendorId {
-            get {
-                return this.vendorIdField;
-            }
-            set {
-                if ((this.vendorIdField.Equals(value) != true)) {
-                    this.vendorIdField = value;
-                    this.RaisePropertyChanged("vendorId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VendorSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
-    [System.SerializableAttribute()]
-    public partial class VendorSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HouseTypeSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -231,21 +74,360 @@ namespace Application.BusinessServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HouseSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
+    [System.SerializableAttribute()]
+    public partial class HouseSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TypeId {
+            get {
+                return this.TypeIdField;
+            }
+            set {
+                if ((this.TypeIdField.Equals(value) != true)) {
+                    this.TypeIdField = value;
+                    this.RaisePropertyChanged("TypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
+    [System.SerializableAttribute()]
+    public partial class TicketSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HouseIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SolvedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SolvedByField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HouseId {
+            get {
+                return this.HouseIdField;
+            }
+            set {
+                if ((this.HouseIdField.Equals(value) != true)) {
+                    this.HouseIdField = value;
+                    this.RaisePropertyChanged("HouseId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Solved {
+            get {
+                return this.SolvedField;
+            }
+            set {
+                if ((this.SolvedField.Equals(value) != true)) {
+                    this.SolvedField = value;
+                    this.RaisePropertyChanged("Solved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SolvedBy {
+            get {
+                return this.SolvedByField;
+            }
+            set {
+                if ((this.SolvedByField.Equals(value) != true)) {
+                    this.SolvedByField = value;
+                    this.RaisePropertyChanged("SolvedBy");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserSerializable", Namespace="http://schemas.datacontract.org/2004/07/BLL")]
+    [System.SerializableAttribute()]
+    public partial class UserSerializable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessServiceReference.IBusinessService")]
     public interface IBusinessService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetAutomobiles", ReplyAction="http://tempuri.org/IBusinessService/GetAutomobilesResponse")]
-        Application.BusinessServiceReference.AutomobileSerializable[] GetAutomobiles();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouseTypes", ReplyAction="http://tempuri.org/IBusinessService/GetHouseTypesResponse")]
+        Application.BusinessServiceReference.HouseTypeSerializable[] GetHouseTypes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetAutomobiles", ReplyAction="http://tempuri.org/IBusinessService/GetAutomobilesResponse")]
-        System.Threading.Tasks.Task<Application.BusinessServiceReference.AutomobileSerializable[]> GetAutomobilesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouseTypes", ReplyAction="http://tempuri.org/IBusinessService/GetHouseTypesResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseTypeSerializable[]> GetHouseTypesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetAllVendors", ReplyAction="http://tempuri.org/IBusinessService/GetAllVendorsResponse")]
-        Application.BusinessServiceReference.VendorSerializable[] GetAllVendors();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouses", ReplyAction="http://tempuri.org/IBusinessService/GetHousesResponse")]
+        Application.BusinessServiceReference.HouseSerializable[] GetHouses();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetAllVendors", ReplyAction="http://tempuri.org/IBusinessService/GetAllVendorsResponse")]
-        System.Threading.Tasks.Task<Application.BusinessServiceReference.VendorSerializable[]> GetAllVendorsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouses", ReplyAction="http://tempuri.org/IBusinessService/GetHousesResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable[]> GetHousesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetTickets", ReplyAction="http://tempuri.org/IBusinessService/GetTicketsResponse")]
+        Application.BusinessServiceReference.TicketSerializable[] GetTickets();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetTickets", ReplyAction="http://tempuri.org/IBusinessService/GetTicketsResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.TicketSerializable[]> GetTicketsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUsers", ReplyAction="http://tempuri.org/IBusinessService/GetUsersResponse")]
+        Application.BusinessServiceReference.UserSerializable[] GetUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUsers", ReplyAction="http://tempuri.org/IBusinessService/GetUsersResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.UserSerializable[]> GetUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -275,20 +457,36 @@ namespace Application.BusinessServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public Application.BusinessServiceReference.AutomobileSerializable[] GetAutomobiles() {
-            return base.Channel.GetAutomobiles();
+        public Application.BusinessServiceReference.HouseTypeSerializable[] GetHouseTypes() {
+            return base.Channel.GetHouseTypes();
         }
         
-        public System.Threading.Tasks.Task<Application.BusinessServiceReference.AutomobileSerializable[]> GetAutomobilesAsync() {
-            return base.Channel.GetAutomobilesAsync();
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseTypeSerializable[]> GetHouseTypesAsync() {
+            return base.Channel.GetHouseTypesAsync();
         }
         
-        public Application.BusinessServiceReference.VendorSerializable[] GetAllVendors() {
-            return base.Channel.GetAllVendors();
+        public Application.BusinessServiceReference.HouseSerializable[] GetHouses() {
+            return base.Channel.GetHouses();
         }
         
-        public System.Threading.Tasks.Task<Application.BusinessServiceReference.VendorSerializable[]> GetAllVendorsAsync() {
-            return base.Channel.GetAllVendorsAsync();
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable[]> GetHousesAsync() {
+            return base.Channel.GetHousesAsync();
+        }
+        
+        public Application.BusinessServiceReference.TicketSerializable[] GetTickets() {
+            return base.Channel.GetTickets();
+        }
+        
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.TicketSerializable[]> GetTicketsAsync() {
+            return base.Channel.GetTicketsAsync();
+        }
+        
+        public Application.BusinessServiceReference.UserSerializable[] GetUsers() {
+            return base.Channel.GetUsers();
+        }
+        
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.UserSerializable[]> GetUsersAsync() {
+            return base.Channel.GetUsersAsync();
         }
     }
 }

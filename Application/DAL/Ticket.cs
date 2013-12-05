@@ -14,13 +14,14 @@ namespace DAL
     
     public partial class Ticket
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string E_mail { get; set; }
         public string Phone { get; set; }
         public int HouseID { get; set; }
         public int SolvedBy { get; set; }
         public bool Solved { get; set; }
+        public string UserText { get; set; }
     
         public virtual House House { get; set; }
         public virtual User User { get; set; }

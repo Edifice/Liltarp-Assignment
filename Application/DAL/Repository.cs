@@ -9,6 +9,7 @@ namespace DAL
     public class Repository
     {
         private liltarpEntities model;
+
         public Repository()
         {
             model = new liltarpEntities();

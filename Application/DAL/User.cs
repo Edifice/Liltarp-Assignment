@@ -19,7 +19,7 @@ namespace DAL
             this.Ticket = new HashSet<Ticket>();
         }
     
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string E_mail { get; set; }
         public string Password { get; set; }
     
