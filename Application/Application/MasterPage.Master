@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Application.MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -71,27 +71,23 @@
         <img alt="lil" class="auto-style2" src="Images/liltarp.png" /><br />
             <table style="width: 100%;">
                 <tr>
-                    <td class="auto-style13" style="background-image: none; background-attachment: scroll">&nbsp;</td>
                     <td class="auto-style12" style="background-image: none; background-attachment: scroll">
                         <img alt="" class="auto-style11" src="Images/Home_icon_black.png"/></td>
                     <td class="auto-style10" style="background-image: none; background-attachment: scroll">
-                        <h1>
-                            <asp:Button ID="Button1" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="37px" OnClick="Button1_Click" Style="font-size: large" Text="Fritidshuse" Width="120px" />
-                        </h1>
+                        <a href="/Default.aspx">Fritidshuse</a>
                     </td>
                     <td class="auto-style10" style="background-image: none; background-attachment: scroll">
-                        <asp:Button ID="Button2" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="37px" Style="font-size: large; text-align: center" Text="Nybyggeri" Width="120px" />
+                        <a href="/Default.aspx">Nybyggeri</a>
                     </td>
                     <td class="auto-style10" style="background-image: none; background-attachment: scroll">
-                        <asp:Button ID="Button3" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="35px" Style="font-size: large" Text="Ombygninger" Width="119px" />
+                        <a href="/Default.aspx">Ombygninger</a>
                     </td>
                     <td class="auto-style10" style="background-image: none; background-attachment: scroll">
-                        <asp:Button ID="Button4" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="36px" Style="font-size: large" Text="Garantiordning" />
+                        <a href="/Default.aspx">Garantiordning</a>
                     </td>
                     <td class="auto-style10" style="background-image: none; background-attachment: scroll">
-                        <asp:Button ID="Button5" runat="server" BackColor="#272B30" BorderStyle="None" ForeColor="#F1F1F1" Height="36px" Style="font-size: large" Text="Kontakt Os" Width="120px" />
+                        <a href="/Default.aspx">Kontakt Os</a>
                     </td>
-                    <td class="auto-style4" style="background-image: none; background-attachment: scroll"></td>
                 </tr>
             </table>
             <br />
