@@ -42,7 +42,7 @@
         <tr>
             <td class="auto-style15">Description：</td>
             <td>
-                <asp:textarea id="TextArea" cols="20" name="S1" rows="2"></asp:textarea></td>
+                <textarea id="TextArea" cols="20" name="S1" rows="2"></textarea></td>
         </tr>
         <tr>
             <td class="auto-style15">Image：</td>
