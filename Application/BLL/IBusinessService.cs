@@ -18,5 +18,8 @@ namespace BLL
 
         [OperationContract]
         List<UserSerializable> GetUsers();
+
+        [OperationContract]
+        int? CheckLogin(string email, string password);
     }
 }

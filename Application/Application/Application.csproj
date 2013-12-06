@@ -72,6 +72,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\EditHouse.aspx" />
+    <Content Include="Admin\HouseList.aspx" />
+    <Content Include="Admin\Login.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\Home_icon_black.png" />
@@ -261,6 +264,27 @@
     <None Include="Service References\BusinessServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\EditHouse.aspx.cs">
+      <DependentUpon>EditHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditHouse.aspx.designer.cs">
+      <DependentUpon>EditHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HouseList.aspx.cs">
+      <DependentUpon>HouseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HouseList.aspx.designer.cs">
+      <DependentUpon>HouseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,6 +301,7 @@
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

@@ -88,7 +88,7 @@ namespace BLL
             var userSerializables = usr as IList<UserSerializable> ?? usr.ToList();
             if (userSerializables.Count() == 1)
             {
-                return userSerializables.GetEnumerator().Current.Id;
+                return userSerializables.First().Id;
             }
             return null;
         }

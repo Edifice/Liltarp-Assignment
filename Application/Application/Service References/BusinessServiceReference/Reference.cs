@@ -428,6 +428,12 @@ namespace Application.BusinessServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUsers", ReplyAction="http://tempuri.org/IBusinessService/GetUsersResponse")]
         System.Threading.Tasks.Task<Application.BusinessServiceReference.UserSerializable[]> GetUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/CheckLogin", ReplyAction="http://tempuri.org/IBusinessService/CheckLoginResponse")]
+        System.Nullable<int> CheckLogin(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/CheckLogin", ReplyAction="http://tempuri.org/IBusinessService/CheckLoginResponse")]
+        System.Threading.Tasks.Task<System.Nullable<int>> CheckLoginAsync(string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -487,6 +493,14 @@ namespace Application.BusinessServiceReference {
         
         public System.Threading.Tasks.Task<Application.BusinessServiceReference.UserSerializable[]> GetUsersAsync() {
             return base.Channel.GetUsersAsync();
+        }
+        
+        public System.Nullable<int> CheckLogin(string email, string password) {
+            return base.Channel.CheckLogin(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<System.Nullable<int>> CheckLoginAsync(string email, string password) {
+            return base.Channel.CheckLoginAsync(email, password);
         }
     }
 }
