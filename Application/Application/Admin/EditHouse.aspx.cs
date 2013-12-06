@@ -19,7 +19,7 @@ namespace Application.Admin
             String Name = TextName.Text;
             int HouseType = Convert.ToInt32(ddHouseType.SelectedValue);
             String Image = Textimage.Text;
-            String Description = TextArea.Text;
+           // String Description = TextArea.Text;
 
         }
 
