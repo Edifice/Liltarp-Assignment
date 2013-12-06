@@ -11,7 +11,8 @@ namespace Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.ClientScript.RegisterClientScriptInclude("jquery", "/Vendor/jquery.min.js");
+            Page.ClientScript.RegisterClientScriptInclude("bs", "/Vendor/bootstrap/js/bootstrap.min.js");
         }
     }
 }

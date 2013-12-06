@@ -3,15 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <div class="alert"><asp:Label runat="server" ID="alert"></asp:Label></div>
-        E-mail：
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-        Password：
-        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="alert alert-danger">
+                <asp:Label runat="server" ID="alert" />
+            </div>
+            <div class="form-group">
+                <asp:Label runat="server" AssociatedControlID="txtEmail" Text="E-mail" />
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:Label runat="server" AssociatedControlID="txtPassword" Text="Password" />
+                <asp:TextBox TextMode="Password" ID="txtPassword" runat="server" CssClass="form-control" />
+            </div>
 
-        <input type="button" OnClick="history.go(-1); return false;" value="Back" />
-        <asp:Button ID="btnOk" runat="server" OnClick="BtnOk_Click" Text="Ok" Width="53px" />
-
+            <div class="form-group">
+                <input type="button" onclick="history.go(-1); return false;" value="Back" class="btn btn-danger" />
+                <asp:Button ID="btnOk" runat="server" OnClick="BtnOk_Click" Text="Ok" CssClass="btn btn-success"/>
+            </div>
+        </div>
     </div>
 </asp:Content>
