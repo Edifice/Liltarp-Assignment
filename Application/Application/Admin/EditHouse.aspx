@@ -25,36 +25,35 @@
         <tr>
             <td class="auto-style15">Name：</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextName" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style15">TypeID：</td>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                </asp:DropDownList>
+                <asp:DropDownList
+                    runat="server"
+                    DataTextField="Name"
+                    DataValueField="ID" 
+                    ID="ddHouseType" />
+                
             </td>
         </tr>
         <tr>
             <td class="auto-style15">Description：</td>
             <td>
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            </td>
+                <asp:textarea id="TextArea" cols="20" name="S1" rows="2"></asp:textarea></td>
         </tr>
         <tr>
             <td class="auto-style15">Image：</td>
             <td>
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-                <asp:Button ID="Button6" runat="server" Text="Browser..." />
+                <asp:TextBox ID="Textimage" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style16">&nbsp;</td>
             <td>
-                <asp:Button ID="Button7" runat="server" Text="Save" />
+                <asp:Button ID="Btnsave" runat="server" Text="Save" OnClick="Button7_Click" />
             </td>
         </tr>
     </table>

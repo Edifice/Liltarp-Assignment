@@ -13,5 +13,19 @@ namespace Application.Admin
         {
 
         }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            String Name = TextName.Text;
+            int HouseType = Convert.ToInt32(ddHouseType.SelectedValue);
+
+            String Description =  
+
+        }
+
+        protected void OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
