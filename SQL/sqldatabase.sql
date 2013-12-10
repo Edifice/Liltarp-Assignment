@@ -1,6 +1,8 @@
 USE [master]
 GO
-
+/****** Object:  Database [liltarp]    Script Date: 10-12-2013 13:17:14 ******/
+ALTER DATABASE [liltarp] SET COMPATIBILITY_LEVEL = 110
+GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
 EXEC [liltarp].[dbo].[sp_fulltext_database] @action = 'enable'
@@ -66,7 +68,7 @@ ALTER DATABASE [liltarp] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [liltarp]
 GO
-/****** Object:  Table [dbo].[House]    Script Date: 12/5/2013 10:42:36 ******/
+/****** Object:  Table [dbo].[House]    Script Date: 10-12-2013 13:17:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -74,21 +76,21 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[House](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ID] [nvarchar](38) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
-	[TypeID] [int] NOT NULL,
+	[TypeID] [nvarchar](38) NOT NULL,
 	[Description] [text] NOT NULL,
 	[Image] [varchar](50) NOT NULL,
  CONSTRAINT [PK_House] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[HouseType]    Script Date: 12/5/2013 10:42:36 ******/
+/****** Object:  Table [dbo].[HouseType]    Script Date: 10-12-2013 13:17:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +98,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[HouseType](
-	[ID] [int] NOT NULL,
+	[ID] [nvarchar](38) NOT NULL,
 	[Name] [varchar](50) NULL,
  CONSTRAINT [PK_HouseType] PRIMARY KEY CLUSTERED 
 (
@@ -107,7 +109,7 @@ CREATE TABLE [dbo].[HouseType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Ticket]    Script Date: 12/5/2013 10:42:36 ******/
+/****** Object:  Table [dbo].[Ticket]    Script Date: 10-12-2013 13:17:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -115,19 +117,24 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Ticket](
-	[ID] [int] NOT NULL,
+	[ID] [nvarchar](38) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
 	[E-mail] [varchar](50) NOT NULL,
 	[Phone] [varchar](50) NOT NULL,
-	[HouseID] [int] NOT NULL,
-	[SolvedBy] [int] NOT NULL,
-	[Solved] [bit] NOT NULL
-) ON [PRIMARY]
+	[HouseID] [nvarchar](38) NULL,
+	[SolvedBy] [int] NULL,
+	[Solved] [bit] NULL,
+	[UserText] [text] NULL,
+ CONSTRAINT [PK_Ticket] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 12/5/2013 10:42:36 ******/
+/****** Object:  Table [dbo].[User]    Script Date: 10-12-2013 13:17:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -135,7 +142,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[User](
-	[ID] [int] NOT NULL,
+	[ID] [nvarchar](38) NOT NULL,
 	[E-mail] [varchar](50) NOT NULL,
 	[Password] [varchar](50) NOT NULL,
  CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
@@ -147,73 +154,63 @@ CREATE TABLE [dbo].[User](
 GO
 SET ANSI_PADDING OFF
 GO
-SET IDENTITY_INSERT [dbo].[House] ON 
-
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'1', N'SM-T2', N'1', N'aaaaaa', N'sm-t/2.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (1, N'SM-T2', 1, N'aaaaaa', N'sm-t/2.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'10', N'SM-T10', N'1', N'aaaaaaa', N'sm-t/10.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (2, N'SM-T3', 1, N'AAAAA', N'sm-t/3.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'11', N'SM-T11', N'1', N'aaaaaaa', N'sm-t/11.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (3, N'SM-T4', 1, N'aaaaaaa', N'sm-t/4.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'12', N'SM-T12', N'1', N'aaaaaaa', N'sm-t/12.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (4, N'SM-T5', 1, N'aaaaaaa', N'sm-t/5.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'13', N'SM-V1', N'2', N'aaaaaaa', N'sm-v/1.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (5, N'SM-T5S', 1, N'aaaaaaa', N'sm-t/5S.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'14', N'SM-V2', N'2', N'aaaaaaa', N'sm-v/2.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (6, N'SM-T6', 1, N'aaaaaaa', N'sm-t/6.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'15', N'SM-V3S', N'2', N'aaaaaaa', N'sm-v/3S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (7, N'SM-T7', 1, N'aaaaaaa', N'sm-t/7.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'16', N'SM-V3SS', N'2', N'aaaaaaa', N'sm-v/3SS.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (8, N'SM-T8', 1, N'aaaaaaa', N'sm-t/8.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'17', N'SM-V4', N'2', N'aaaaaaa', N'sm-v/4.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (9, N'SM-T9', 1, N'aaaaaaa', N'sm-t/9.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'18', N'SM-V5S', N'2', N'aaaaaaa', N'sm-v/5S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (10, N'SM-T10', 1, N'aaaaaaa', N'sm-t/10.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'19', N'SM-V6S', N'2', N'aaaaaaa', N'sm-v/6S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (11, N'SM-T11', 1, N'aaaaaaa', N'sm-t/11.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'2', N'SM-T3', N'1', N'AAAAA', N'sm-t/3.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (12, N'SM-T12', 1, N'aaaaaaa', N'sm-t/12.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'20', N'SM-L2', N'3', N'aaaaaaa', N'sm-l/2.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (13, N'SM-V1', 2, N'aaaaaaa', N'sm-v/1.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'3', N'SM-T4', N'1', N'aaaaaaa', N'sm-t/4.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (14, N'SM-V2', 2, N'aaaaaaa', N'sm-v/2.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'4', N'SM-T5', N'1', N'aaaaaaa', N'sm-t/5.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (15, N'SM-V3S', 2, N'aaaaaaa', N'sm-v/3S.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'5', N'SM-T5S', N'1', N'aaaaaaa', N'sm-t/5S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (16, N'SM-V3SS', 2, N'aaaaaaa', N'sm-v/3SS.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'6', N'SM-T6', N'1', N'aaaaaaa', N'sm-t/6.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (17, N'SM-V4', 2, N'aaaaaaa', N'sm-v/4.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'7', N'SM-T7', N'1', N'aaaaaaa', N'sm-t/7.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (18, N'SM-V5S', 2, N'aaaaaaa', N'sm-v/5S.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'8', N'SM-T8', N'1', N'aaaaaaa', N'sm-t/8.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (19, N'SM-V6S', 2, N'aaaaaaa', N'sm-v/6S.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'9', N'SM-T9', N'1', N'aaaaaaa', N'sm-t/9.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (20, N'SM-L2', 3, N'aaaaaaa', N'sm-l/2.jpg')
+INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'1', N'SM-T')
 GO
-SET IDENTITY_INSERT [dbo].[House] OFF
+INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'2', N'SM-V')
 GO
-INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (1, N'SM-T')
+INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'3', NULL)
 GO
-INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (2, N'SM-V')
-GO
-INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (3, NULL)
-GO
-INSERT [dbo].[User] ([ID], [E-mail], [Password]) VALUES (1, N'admin@liltarp.dk', N'foobar')
+INSERT [dbo].[User] ([ID], [E-mail], [Password]) VALUES (N'1', N'admin@liltarp.dk', N'foobar')
 GO
 ALTER TABLE [dbo].[House]  WITH CHECK ADD  CONSTRAINT [FK_House_HouseType] FOREIGN KEY([TypeID])
 REFERENCES [dbo].[HouseType] ([ID])
 GO
 ALTER TABLE [dbo].[House] CHECK CONSTRAINT [FK_House_HouseType]
 GO
-ALTER TABLE [dbo].[Ticket]  WITH CHECK ADD  CONSTRAINT [FK_Ticket_House] FOREIGN KEY([HouseID])
-REFERENCES [dbo].[House] ([Id])
+ALTER TABLE [dbo].[Ticket]  WITH CHECK ADD  CONSTRAINT [FK_Ticket_House1] FOREIGN KEY([HouseID])
+REFERENCES [dbo].[House] ([ID])
 GO
-ALTER TABLE [dbo].[Ticket] CHECK CONSTRAINT [FK_Ticket_House]
-GO
-ALTER TABLE [dbo].[Ticket]  WITH CHECK ADD  CONSTRAINT [FK_Ticket_User] FOREIGN KEY([SolvedBy])
-REFERENCES [dbo].[User] ([ID])
-GO
-ALTER TABLE [dbo].[Ticket] CHECK CONSTRAINT [FK_Ticket_User]
+ALTER TABLE [dbo].[Ticket] CHECK CONSTRAINT [FK_Ticket_House1]
 GO
 USE [master]
 GO
