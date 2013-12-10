@@ -379,9 +379,6 @@
     <Content Include="Images\pictures\sm-t\Thumbs.db" />
     <Content Include="Images\pictures\sm-v\desktop.ini" />
     <Content Include="Images\pictures\sm-v\Thumbs.db" />
-    <None Include="Service References\BusinessServiceReference\BLL.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\BusinessServiceReference\service.wsdl" />
     <None Include="Service References\BusinessServiceReference\service.xsd">
       <SubType>Designer</SubType>

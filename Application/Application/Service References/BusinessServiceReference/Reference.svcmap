@@ -25,7 +25,6 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c528ea16-01d5-487c-ba90-5c6b61dcc617" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BLL/Service1/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0f4d7891-ad2e-4597-abdc-73f39a0cfab5" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BLL/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="059536e8-7420-4684-89b6-0659fb6d23d0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BLL/Service1/mex" />
-    <MetadataFile FileName="BLL.xsd" MetadataType="Schema" ID="603be4fc-8c8c-435a-a066-88803f96f136" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BLL/Service1/mex" />
     <MetadataFile FileName="DAL.xsd" MetadataType="Schema" ID="0171d889-a51d-4df9-876f-ec03e1f3f506" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BLL/Service1/mex" />
   </Metadata>
   <Extensions>

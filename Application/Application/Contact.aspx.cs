@@ -22,15 +22,15 @@ namespace Application
         {
             var ticket = new Ticket()
             {
+                IdSerializable = "",
                 EmailSerializable = txtEmail.Text,
                 NameSerializable = txtName.Text,
                 PhoneSerializable = txtPhone.Text,
                 HouseIdSerializable = ddHouse.SelectedValue,
-                UserTextSerializable = txtIssue.Text,
-                
+                UserTextSerializable = txtIssue.Text
             };
 
-            service.NewTicket(ticket);
+            _service.NewTicket(ticket);
         }
     }
 }
