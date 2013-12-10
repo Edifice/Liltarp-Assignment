@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/BLL" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IBusinessService_GetHouseTypes_InputMessage">
@@ -37,6 +38,12 @@
   <wsdl:message name="IBusinessService_CheckLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusinessService_NewTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTicket" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_NewTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTicketResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBusinessService">
     <wsdl:operation name="GetHouseTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseTypes" message="tns:IBusinessService_GetHouseTypes_InputMessage" />
@@ -57,6 +64,10 @@
     <wsdl:operation name="CheckLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/CheckLogin" message="tns:IBusinessService_CheckLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/CheckLoginResponse" message="tns:IBusinessService_CheckLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/NewTicket" message="tns:IBusinessService_NewTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/NewTicketResponse" message="tns:IBusinessService_NewTicket_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBusinessService" type="tns:IBusinessService">
@@ -99,6 +110,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckLogin">
       <soap:operation soapAction="http://tempuri.org/IBusinessService/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewTicket">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/NewTicket" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -24,6 +24,12 @@
                 DataTextField="Name"
                 DataValueField="Id"/>
         </div>
+        <asp:Label ID="Label5" runat="server" Text="Describe your Issue :"></asp:Label>
+        <asp:TextBox ID="txtIssue" runat="server" Height="97px"  Width="387px"></asp:TextBox>
+        <div class="form-row">
+            
         <asp:Button runat="server" Text="Submit" ID="btnSubmit" OnClick="btnSubmit_Click"/>
+            
+            </div>
     </div>
 </asp:Content>

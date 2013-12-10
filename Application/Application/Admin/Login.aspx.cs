@@ -24,7 +24,7 @@ namespace Application.Admin
 
         protected void BtnOk_Click(object sender, EventArgs e)
         {
-            int? userId = service.CheckLogin(txtEmail.Text, txtPassword.Text);
+            string userId = service.CheckLogin(txtEmail.Text, txtPassword.Text);
 
             if (userId != null) //valid login
             {
