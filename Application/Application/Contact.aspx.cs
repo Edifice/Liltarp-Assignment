@@ -20,12 +20,17 @@ namespace Application
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            var ticket = new TicketSerializable()
+            var ticket = new Ticket()
             {
-                Email = txtEmail.Text,
-                Name = txtName.Text,
-                Phone = txtPhone.Text
+                EmailSerializable = txtEmail.Text,
+                NameSerializable = txtName.Text,
+                PhoneSerializable = txtPhone.Text,
+                HouseIdSerializable = ddHouse.SelectedValue,
+                UserTextSerializable = txtIssue.Text,
+                
             };
+
+            service.NewTicket(ticket);
         }
     }
 }

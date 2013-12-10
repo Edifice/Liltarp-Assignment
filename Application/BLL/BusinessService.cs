@@ -27,7 +27,7 @@ namespace BLL
         {
             return new HouseSerializable
             {
-                Id = old.Id,
+                Id = old.ID,
                 Name = old.Name,
                 TypeId = old.TypeID,
                 Description = old.Description,
@@ -35,17 +35,18 @@ namespace BLL
             };
         }
 
-        private TicketSerializable TranslateTickets(Ticket old)
+        private Ticket TranslateTickets(Ticket old)
         {
-            return new TicketSerializable
+            return new Ticket
             {
-                Id = old.ID,
+                ID = old.ID,
                 Name = old.Name,
-                Email = old.E_mail,
+                E_mail = old.E_mail,
                 Phone = old.Phone,
-                HouseId = old.HouseID,
+                HouseID = old.HouseID,
                 SolvedBy = old.SolvedBy,
                 Solved = old.Solved,
+                UserText = old.UserText,
             };
         }
 
@@ -69,17 +70,12 @@ namespace BLL
             return rep.GetHouses().Select(TranslateHouses).ToList();
         }
 
-        public List<TicketSerializable> GetTickets()
-        {
-            return rep.GetTickets().Select(TranslateTickets).ToList();
-        }
-
         public List<UserSerializable> GetUsers()
         {
             return rep.GetUsers().Select(TranslateUsers).ToList();
         }
 
-        public int? CheckLogin(string email, string password)
+        public string CheckLogin(string email, string password)
         {
             var usr = this.GetUsers().Where(
                 a => a.Email == email &&
@@ -90,7 +86,32 @@ namespace BLL
             {
                 return userSerializables.First().Id;
             }
-            return null;
+            return "";
+        }
+
+
+        public void NewTicket(Ticket ticket)
+        {
+            var tick = new Ticket
+            {
+                IdSerializable = ticket.IdSerializable,
+                NameSerializable = ticket.NameSerializable,
+                EmailSerializable = ticket.EmailSerializable,
+                PhoneSerializable = ticket.PhoneSerializable,
+                HouseIdSerializable = ticket.HouseIdSerializable,
+                SolvedBySerializable = ticket.SolvedBySerializable,
+                SolvedSerializable = ticket.SolvedSerializable,
+                UserTextSerializable = ticket.UserTextSerializable
+            };
+                    rep.SetTicket(tick);
+        }
+
+
+
+
+        public List<Ticket> GetTickets()
+        {
+            return rep.GetTickets().Select(TranslateTickets).ToList();
         }
     }
 }

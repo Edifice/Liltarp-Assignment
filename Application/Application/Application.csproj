@@ -252,13 +252,16 @@
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.HouseTypeSerializable.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.TicketSerializable.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.UserSerializable.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="MasterPage.Master" />
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.Ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\BusinessServiceReference\DAL.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\BusinessServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

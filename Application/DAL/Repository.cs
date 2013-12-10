@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,15 @@ namespace DAL
         public List<User> GetUsers()
         {
             return model.User.ToList();
+        }
+
+        public void SetTicket(Ticket tick)
+        {
+            if(string.IsNullOrEmpty(tick.ID))
+                tick.ID = System.Guid.NewGuid().ToString();
+            model.Ticket.Add(tick);
+            model.SaveChanges();
+           
         }
     }
 }
