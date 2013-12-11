@@ -26,6 +26,12 @@
                     DataValueField="Id"
                     CssClass="form-control" />
             </div>
+                        <div class="form-group">
+                <asp:Label ID="Label1" runat="server" AssociatedControlID="txtPhone">Ticket Issue</asp:Label>
+                <asp:TextBox runat="server" ID="txtIssue" CssClass="form-control" />
+            </div>
+            
+
             <asp:Button runat="server" Text="Submit" ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="col-sm-6 col-sm-offset-3 btn btn-success" />
         </div>
     </div>
