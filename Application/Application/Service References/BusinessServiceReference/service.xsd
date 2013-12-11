@@ -25,6 +25,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetHouseById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHouseByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetHouseByIdResult" nillable="true" type="q3:HouseSerializable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetTickets">
     <xs:complexType>
       <xs:sequence />
@@ -33,7 +47,7 @@
   <xs:element name="GetTicketsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketsResult" nillable="true" type="q3:ArrayOfTicket" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketsResult" nillable="true" type="q4:ArrayOfTicket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +59,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserSerializable" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUsersResult" nillable="true" type="q5:ArrayOfUserSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -67,11 +81,23 @@
   <xs:element name="NewTicket">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="ticket" nillable="true" type="q5:Ticket" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="ticket" nillable="true" type="q6:Ticket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NewTicketResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q7:House" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHouseResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

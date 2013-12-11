@@ -10,15 +10,15 @@
 namespace Application.Admin {
     
     
-    public partial class HouseList {
+    public partial class AdminMaster {
         
         /// <summary>
-        /// List control.
+        /// MasterPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList List;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MasterPlaceHolder;
     }
 }

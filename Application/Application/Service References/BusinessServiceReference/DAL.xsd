@@ -62,4 +62,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserSerializable" nillable="true" type="tns:UserSerializable" />
+  <xs:complexType name="House">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseType" nillable="true" type="tns:HouseType" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="tns:ArrayOfTicket" />
+      <xs:element minOccurs="0" name="TypeID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="House" nillable="true" type="tns:House" />
+  <xs:complexType name="HouseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="House" nillable="true" type="tns:ArrayOfHouse" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HouseType" nillable="true" type="tns:HouseType" />
+  <xs:complexType name="ArrayOfHouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="House" nillable="true" type="tns:House" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHouse" nillable="true" type="tns:ArrayOfHouse" />
 </xs:schema>

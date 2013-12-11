@@ -10,11 +10,11 @@ namespace Application.Admin
 {
     public partial class Login : System.Web.UI.Page
     {
-        private BusinessServiceClient service;
+        private BusinessServiceClient _service;
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            service = new BusinessServiceClient();
+            _service = new BusinessServiceClient();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace Application.Admin
 
         protected void BtnOk_Click(object sender, EventArgs e)
         {
-            string userId = service.CheckLogin(txtEmail.Text, txtPassword.Text);
+            string userId = _service.CheckLogin(txtEmail.Text, txtPassword.Text);
 
             if (userId != null) //valid login
             {

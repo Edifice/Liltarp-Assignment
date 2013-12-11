@@ -75,6 +75,7 @@
     <Content Include="Admin\EditHouse.aspx" />
     <Content Include="Admin\HouseList.aspx" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Tickets.aspx" />
     <Content Include="BYGGaranti.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
@@ -259,6 +260,7 @@
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.Ticket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Admin\AdminMaster.master" />
     <None Include="Service References\BusinessServiceReference\DAL.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -270,6 +272,13 @@
     <None Include="Service References\BusinessServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminMaster.master.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.master.designer.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditHouse.aspx.cs">
       <DependentUpon>EditHouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +299,13 @@
     </Compile>
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
     </Compile>
     <Compile Include="BYGGaranti.aspx.cs">
       <DependentUpon>BYGGaranti.aspx</DependentUpon>

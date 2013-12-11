@@ -70,6 +70,11 @@ namespace BLL
             return rep.GetHouses().Select(TranslateHouses).ToList();
         }
 
+        public HouseSerializable GetHouseById(string id)
+        {
+            return TranslateHouses(rep.GetHouses().First(a => a.ID.Equals(id)));
+        }
+
         public List<UserSerializable> GetUsers()
         {
             return rep.GetUsers().Select(TranslateUsers).ToList();
@@ -106,7 +111,10 @@ namespace BLL
                     rep.SetTicket(tick);
         }
 
-
+        public void UpdateHouse(House house)
+        {
+            rep.UpdateHouse(house);
+        }
 
 
         public List<Ticket> GetTickets()

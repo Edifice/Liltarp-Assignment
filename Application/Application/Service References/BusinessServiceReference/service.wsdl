@@ -19,6 +19,12 @@
   <wsdl:message name="IBusinessService_GetHouses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetHousesResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusinessService_GetHouseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseById" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetHouseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IBusinessService_GetTickets_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTickets" />
   </wsdl:message>
@@ -43,6 +49,12 @@
   <wsdl:message name="IBusinessService_NewTicket_OutputMessage">
     <wsdl:part name="parameters" element="tns:NewTicketResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusinessService_UpdateHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHouse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_UpdateHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHouseResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBusinessService">
     <wsdl:operation name="GetHouseTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseTypes" message="tns:IBusinessService_GetHouseTypes_InputMessage" />
@@ -51,6 +63,10 @@
     <wsdl:operation name="GetHouses">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouses" message="tns:IBusinessService_GetHouses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHousesResponse" message="tns:IBusinessService_GetHouses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseById" message="tns:IBusinessService_GetHouseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHouseByIdResponse" message="tns:IBusinessService_GetHouseById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTickets">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTickets" message="tns:IBusinessService_GetTickets_InputMessage" />
@@ -68,6 +84,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/NewTicket" message="tns:IBusinessService_NewTicket_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/NewTicketResponse" message="tns:IBusinessService_NewTicket_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/UpdateHouse" message="tns:IBusinessService_UpdateHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/UpdateHouseResponse" message="tns:IBusinessService_UpdateHouse_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBusinessService" type="tns:IBusinessService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -82,6 +102,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetHouses">
       <soap:operation soapAction="http://tempuri.org/IBusinessService/GetHouses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseById">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetHouseById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -118,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="NewTicket">
       <soap:operation soapAction="http://tempuri.org/IBusinessService/NewTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/UpdateHouse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

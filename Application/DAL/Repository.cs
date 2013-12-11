@@ -13,7 +13,7 @@ namespace DAL
         public Repository()
         {
             model = new liltarpEntities();
-            
+
         }
 
         public List<HouseType> GetHouseTypes()
@@ -38,11 +38,33 @@ namespace DAL
 
         public void SetTicket(Ticket tick)
         {
-            if(string.IsNullOrEmpty(tick.ID))
+            if (string.IsNullOrEmpty(tick.ID))
                 tick.ID = System.Guid.NewGuid().ToString();
             model.Ticket.Add(tick);
             model.SaveChanges();
-           
+        }
+
+        public void UpdateHouse(House house)
+        {
+            if (string.IsNullOrEmpty(house.ID))
+            {
+                house.ID = System.Guid.NewGuid().ToString();
+                model.House.Add(house);
+                model.SaveChanges();
+            }
+            else
+            {
+                House original = model.House.Find(house.ID);
+                if (original != null)
+                {
+                    original.Name = house.Name;
+                    original.TypeID = house.TypeID;
+                    original.Description = house.Description;
+                    original.Image = house.Image;
+                    model.SaveChanges();
+                }
+
+            }
         }
     }
 }

@@ -417,6 +417,224 @@ namespace Application.BusinessServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="House", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
+    [System.SerializableAttribute()]
+    public partial class House : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Application.BusinessServiceReference.HouseType HouseTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Application.BusinessServiceReference.Ticket[] TicketField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Application.BusinessServiceReference.HouseType HouseType {
+            get {
+                return this.HouseTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HouseTypeField, value) != true)) {
+                    this.HouseTypeField = value;
+                    this.RaisePropertyChanged("HouseType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDField, value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Application.BusinessServiceReference.Ticket[] Ticket {
+            get {
+                return this.TicketField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TicketField, value) != true)) {
+                    this.TicketField = value;
+                    this.RaisePropertyChanged("Ticket");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TypeID {
+            get {
+                return this.TypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeIDField, value) != true)) {
+                    this.TypeIDField = value;
+                    this.RaisePropertyChanged("TypeID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HouseType", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
+    [System.SerializableAttribute()]
+    public partial class HouseType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Application.BusinessServiceReference.House[] HouseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Application.BusinessServiceReference.House[] House {
+            get {
+                return this.HouseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HouseField, value) != true)) {
+                    this.HouseField = value;
+                    this.RaisePropertyChanged("House");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDField, value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessServiceReference.IBusinessService")]
     public interface IBusinessService {
@@ -432,6 +650,12 @@ namespace Application.BusinessServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouses", ReplyAction="http://tempuri.org/IBusinessService/GetHousesResponse")]
         System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable[]> GetHousesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouseById", ReplyAction="http://tempuri.org/IBusinessService/GetHouseByIdResponse")]
+        Application.BusinessServiceReference.HouseSerializable GetHouseById(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetHouseById", ReplyAction="http://tempuri.org/IBusinessService/GetHouseByIdResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable> GetHouseByIdAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetTickets", ReplyAction="http://tempuri.org/IBusinessService/GetTicketsResponse")]
         Application.BusinessServiceReference.Ticket[] GetTickets();
@@ -456,6 +680,12 @@ namespace Application.BusinessServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/NewTicket", ReplyAction="http://tempuri.org/IBusinessService/NewTicketResponse")]
         System.Threading.Tasks.Task NewTicketAsync(Application.BusinessServiceReference.Ticket ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/UpdateHouse", ReplyAction="http://tempuri.org/IBusinessService/UpdateHouseResponse")]
+        void UpdateHouse(Application.BusinessServiceReference.House house);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/UpdateHouse", ReplyAction="http://tempuri.org/IBusinessService/UpdateHouseResponse")]
+        System.Threading.Tasks.Task UpdateHouseAsync(Application.BusinessServiceReference.House house);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -501,6 +731,14 @@ namespace Application.BusinessServiceReference {
             return base.Channel.GetHousesAsync();
         }
         
+        public Application.BusinessServiceReference.HouseSerializable GetHouseById(string id) {
+            return base.Channel.GetHouseById(id);
+        }
+        
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable> GetHouseByIdAsync(string id) {
+            return base.Channel.GetHouseByIdAsync(id);
+        }
+        
         public Application.BusinessServiceReference.Ticket[] GetTickets() {
             return base.Channel.GetTickets();
         }
@@ -531,6 +769,14 @@ namespace Application.BusinessServiceReference {
         
         public System.Threading.Tasks.Task NewTicketAsync(Application.BusinessServiceReference.Ticket ticket) {
             return base.Channel.NewTicketAsync(ticket);
+        }
+        
+        public void UpdateHouse(Application.BusinessServiceReference.House house) {
+            base.Channel.UpdateHouse(house);
+        }
+        
+        public System.Threading.Tasks.Task UpdateHouseAsync(Application.BusinessServiceReference.House house) {
+            return base.Channel.UpdateHouseAsync(house);
         }
     }
 }

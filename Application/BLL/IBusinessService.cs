@@ -15,6 +15,9 @@ namespace BLL
         List<HouseSerializable> GetHouses();
 
         [OperationContract]
+        HouseSerializable GetHouseById(string id);
+
+        [OperationContract]
         List<Ticket> GetTickets();
 
         [OperationContract]
@@ -25,5 +28,8 @@ namespace BLL
 
         [OperationContract]
         void NewTicket(Ticket ticket);
+
+        [OperationContract]
+        void UpdateHouse(House house);
     }
 }
