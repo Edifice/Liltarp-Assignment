@@ -11,7 +11,10 @@ namespace Application.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("~/Admin/Login.aspx");
+            }
         }
     }
 }
