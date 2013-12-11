@@ -658,10 +658,22 @@ namespace Application.BusinessServiceReference {
         System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable> GetHouseByIdAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetTickets", ReplyAction="http://tempuri.org/IBusinessService/GetTicketsResponse")]
-        Application.BusinessServiceReference.Ticket[] GetTickets();
+        Application.BusinessServiceReference.Ticket[] GetTickets(string idSerializable);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetTickets", ReplyAction="http://tempuri.org/IBusinessService/GetTicketsResponse")]
-        System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetTicketsAsync();
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetTicketsAsync(string idSerializable);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetSolvedTickets", ReplyAction="http://tempuri.org/IBusinessService/GetSolvedTicketsResponse")]
+        Application.BusinessServiceReference.Ticket[] GetSolvedTickets();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetSolvedTickets", ReplyAction="http://tempuri.org/IBusinessService/GetSolvedTicketsResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetSolvedTicketsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUnsolvedTickets", ReplyAction="http://tempuri.org/IBusinessService/GetUnsolvedTicketsResponse")]
+        Application.BusinessServiceReference.Ticket[] GetUnsolvedTickets();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUnsolvedTickets", ReplyAction="http://tempuri.org/IBusinessService/GetUnsolvedTicketsResponse")]
+        System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetUnsolvedTicketsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/GetUsers", ReplyAction="http://tempuri.org/IBusinessService/GetUsersResponse")]
         Application.BusinessServiceReference.UserSerializable[] GetUsers();
@@ -731,20 +743,28 @@ namespace Application.BusinessServiceReference {
             return base.Channel.GetHousesAsync();
         }
         
-        public Application.BusinessServiceReference.HouseSerializable GetHouseById(string id) {
-            return base.Channel.GetHouseById(id);
+        public Application.BusinessServiceReference.Ticket[] GetTickets(string idSerializable) {
+            return base.Channel.GetTickets(idSerializable);
         }
         
-        public System.Threading.Tasks.Task<Application.BusinessServiceReference.HouseSerializable> GetHouseByIdAsync(string id) {
-            return base.Channel.GetHouseByIdAsync(id);
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetTicketsAsync(string idSerializable) {
+            return base.Channel.GetTicketsAsync(idSerializable);
         }
         
-        public Application.BusinessServiceReference.Ticket[] GetTickets() {
-            return base.Channel.GetTickets();
+        public Application.BusinessServiceReference.Ticket[] GetSolvedTickets() {
+            return base.Channel.GetSolvedTickets();
         }
         
-        public System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetTicketsAsync() {
-            return base.Channel.GetTicketsAsync();
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetSolvedTicketsAsync() {
+            return base.Channel.GetSolvedTicketsAsync();
+        }
+        
+        public Application.BusinessServiceReference.Ticket[] GetUnsolvedTickets() {
+            return base.Channel.GetUnsolvedTickets();
+        }
+        
+        public System.Threading.Tasks.Task<Application.BusinessServiceReference.Ticket[]> GetUnsolvedTicketsAsync() {
+            return base.Channel.GetUnsolvedTicketsAsync();
         }
         
         public Application.BusinessServiceReference.UserSerializable[] GetUsers() {

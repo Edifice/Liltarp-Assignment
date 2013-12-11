@@ -38,8 +38,8 @@ namespace DAL
 
         public void SetTicket(Ticket tick)
         {
-            if (string.IsNullOrEmpty(tick.ID))
-                tick.ID = System.Guid.NewGuid().ToString();
+            if(string.IsNullOrEmpty(tick.ID))
+                tick.ID = Guid.NewGuid().ToString();
             model.Ticket.Add(tick);
             model.SaveChanges();
         }

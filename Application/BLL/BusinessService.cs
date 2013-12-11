@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using DAL;
 
 namespace BLL
@@ -11,6 +12,7 @@ namespace BLL
         public BusinessService()
         {
             rep = new Repository();
+           
         }
 
 
@@ -117,9 +119,28 @@ namespace BLL
         }
 
 
-        public List<Ticket> GetTickets()
+        public List<Ticket> GetTickets(string idSerializable)
         {
-            return rep.GetTickets().Select(TranslateTickets).ToList();
+            List<Ticket> shownTickets = new List<Ticket>();
+            foreach (var ticket in rep.GetTickets())
+            {
+                if (ticket.IdSerializable == idSerializable)
+                    shownTickets.Add(TranslateTickets(ticket));
+
+            }
+            return shownTickets;
+        }
+
+
+        public List<Ticket> GetSolvedTickets()
+        {
+            return rep.GetTickets().Where(a => a.Solved == true).Select(TranslateTickets).ToList();
+        }
+       
+
+        public List<Ticket> GetUnsolvedTickets()
+        {
+            return rep.GetTickets().Where( a => a.Solved != true).Select(TranslateTickets).ToList();
         }
     }
 }

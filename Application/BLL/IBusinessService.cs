@@ -17,9 +17,14 @@ namespace BLL
         [OperationContract]
         HouseSerializable GetHouseById(string id);
 
+        List<Ticket> GetTickets(string idSerializable);
+        
         [OperationContract]
-        List<Ticket> GetTickets();
-
+        List<Ticket> GetSolvedTickets();
+       
+        [OperationContract]
+        List<Ticket> GetUnsolvedTickets();
+        
         [OperationContract]
         List<UserSerializable> GetUsers();
 

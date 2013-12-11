@@ -75,7 +75,7 @@
     <Content Include="Admin\EditHouse.aspx" />
     <Content Include="Admin\HouseList.aspx" />
     <Content Include="Admin\Login.aspx" />
-    <Content Include="Admin\Tickets.aspx" />
+    <Content Include="Admin\TicketList.aspx" />
     <Content Include="BYGGaranti.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
@@ -300,12 +300,12 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Tickets.aspx.cs">
-      <DependentUpon>Tickets.aspx</DependentUpon>
+    <Compile Include="Admin\TicketList.aspx.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Tickets.aspx.designer.cs">
-      <DependentUpon>Tickets.aspx</DependentUpon>
+    <Compile Include="Admin\TicketList.aspx.designer.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
     </Compile>
     <Compile Include="BYGGaranti.aspx.cs">
       <DependentUpon>BYGGaranti.aspx</DependentUpon>

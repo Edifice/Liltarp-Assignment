@@ -31,6 +31,18 @@
   <wsdl:message name="IBusinessService_GetTickets_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSolvedTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolvedTickets" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSolvedTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolvedTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUnsolvedTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnsolvedTickets" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUnsolvedTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnsolvedTicketsResponse" />
+  </wsdl:message>
   <wsdl:message name="IBusinessService_GetUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUsers" />
   </wsdl:message>
@@ -71,6 +83,14 @@
     <wsdl:operation name="GetTickets">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTickets" message="tns:IBusinessService_GetTickets_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTicketsResponse" message="tns:IBusinessService_GetTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolvedTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetSolvedTickets" message="tns:IBusinessService_GetSolvedTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetSolvedTicketsResponse" message="tns:IBusinessService_GetSolvedTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsolvedTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetUnsolvedTickets" message="tns:IBusinessService_GetUnsolvedTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetUnsolvedTicketsResponse" message="tns:IBusinessService_GetUnsolvedTickets_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetUsers" message="tns:IBusinessService_GetUsers_InputMessage" />
@@ -120,6 +140,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetTickets">
       <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolvedTickets">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetSolvedTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsolvedTickets">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetUnsolvedTickets" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
