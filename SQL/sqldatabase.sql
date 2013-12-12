@@ -150,29 +150,30 @@ GO
 SET IDENTITY_INSERT [dbo].[House] ON 
 
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (1, N'SM-T2', 1, N'aaaaaa', N'sm-t/2.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (1, N'SM-T2', 1, N'Typen SM-T2 giver med sin T-form gode og spændende muligheder for hyggelig indretning, og udvendig er der masser af lækroge på terrassen.Som det fremgår af grundplanen, er indretningen nærmest det ultimative med hensyn til et hus uden spildplads.', N'sm-t/2.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (2, N'SM-T3', 1, N'AAAAA', N'sm-t/3.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (2, N'SM-T3', 1, N'Typen T3 giver med sin T-form gode og spændende muligheder for hyggelig indretning, og udvendig er der masser af lækroge på terrassen. Som det fremgår af grundplanen, er indretningen nærmest det ultimative med hensyn til et hus uden spildplads.', N'sm-t/3.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (3, N'SM-T4', 1, N'aaaaaaa', N'sm-t/4.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (3, N'SM-T4', 1, N'Mange års erfaring med produktion af vor lille T – type har vi overført til denne type, som er blevet lidt større, så der bl.a. er blevet plads til hjørne spa, entre til garderobe m.m. T – serien giver uanede læ- og solmuligheder på terrassen.', N'sm-t/4.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (4, N'SM-T5', 1, N'aaaaaaa', N'sm-t/5.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (4, N'SM-T5', 1, N'Vi har med denne nye T-type opfyldt et stort ønske fra vore kunder om en type, som har 3 store soveværelser samt et rum til solarium, og hvilket vi har lavet her i denne type, hvor der er plads til et stort sandwich-solarium i gæstetoilettet. Men som det gør sig gældende med vores øvrige modeller, kan denne type også kombineres på mange måder.', N'sm-t/5.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (5, N'SM-T5S', 1, N'aaaaaaa', N'sm-t/5S.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (5, N'SM-T5S', 1, N'Vi har med denne nye T-type opfyldt et stort ønske fra vore kunder om en type, som har 3 store soveværelser samt et rum til solarium, og hvilket vi har lavet her i denne type, hvor der er plads til et stort sandwich solarium i gæstetoilettet. Men som det gør sig gældende med vores øvrige modeller, kan denne type også kombineres på mange måder. 
+NB: Vi har forlænget denne type med 1,2 m. og derved har vi fået et større redskabsrum + overbygget terrasse ved hovedindgang + dejlig vindfang med faste skabe. Ligeledes er der monteret terrassedør fra soveværelset.', N'sm-t/5S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (6, N'SM-T6', 1, N'aaaaaaa', N'sm-t/6.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (6, N'SM-T6', 1, N'Hermed præsenterer vi vores sidste nye T-type, her i stråtagudførelse. Typen er en videreudvikling af vor populære SM-T 5, hvor huset her er udført med forsænket pejsestue, muret skorsten og brændeovn, spisestue og opholdsstue med tv-hjørne ellers er indretningen som type SM-T5s.', N'sm-t/6.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (7, N'SM-T7', 1, N'aaaaaaa', N'sm-t/7.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (7, N'SM-T7', 1, N'Hermed præsenterer vi vores sidste nye T-type. Typen er en videreudvikling af vor populære SM-T 5s som her er udstyret med 4 soveværelse og gæstetoilet med bruser samt privat depotrum, hvis huset lejes ud. Denne type er for den store familie eller for dem som ønsker et meget populært hus til udlejning.', N'sm-t/7.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (8, N'SM-T8', 1, N'aaaaaaa', N'sm-t/8.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (8, N'SM-T8', 1, N'Her præsenterer vi vores sidste nye T-type. Typen er en videreudvikling af vor populære SM-T 7, huset indeholder bl.a. 4 dobbelt værelser, stor spabadeværelse med sauna, gæstetoilet med brus og plads til solarium samt stor overbygget terrasse ved indgangsparti m.m. Denne type er for den store.', N'sm-t/8.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (9, N'SM-T9', 1, N'aaaaaaa', N'sm-t/9.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (9, N'SM-T9', 1, N'Vi har med denne nye T- type udviklet et fritidshus som opfylder alt, hvad man kan ønske af et luksus fritidshus. Huset indeholder bl.a. aktivitetsrum med billard/bordtennisbord, dart, m.m., stort spabadeværelse, sauna, gæstetoilet med stor wellness kabine, lækkert køkken m/granit bordplade, alt i hårde hvide varer bl.a. amerikanerkøleskab, stor overbygget terrasse og meget mere, som ikke kan beskrives, men som skal ses!', N'sm-t/9.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (10, N'SM-T10', 1, N'aaaaaaa', N'sm-t/10.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (10, N'SM-T10', 1, N'Vi har med denne nye type, som er en videre udvikling af vores populære T- serie, skabt et fritidshus, som opfylder alt, hvad man kan ønske af et luksus hus. Huset indeholder bl.a. aktivitetsrum med billard/bordtennisbord, dart, m.m. Stort spabadeværelse, sauna, gæstetoilet med stor wellnes kabine, lækkert køkken med alt i hårde hvide varer bl.a. amerikanerkøleskab, bryggers med vaskesøjle, stor overbygget terrasse og meget mere som ikke kan beskrives, men som skal ses!', N'sm-t/10.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (11, N'SM-T11', 1, N'aaaaaaa', N'sm-t/11.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (11, N'SM-T11', 1, N'Efter ønske fra vores kunder har vi udviklet denne nye type, hvor vi bl.a. har ændret sidehøjden. Typen er en videreudvikling af vores populære T- serie. Huset indeholder bl.a. aktivitetsrum med billard/bordtennisbord, dart, m.m. Stort spabadeværelse, sauna, gæstetoilet med stor wellness- kabine, lækkert køkken med alt i hårde hvide varer bl.a. amerikanerkøleskab. 5 værelser, entre med skabe, stor overbygget terrasse med glaspartier og meget mere som ikke kan beskrives, men som skal ses! Vi har med denne type forsøgt at skabe et fritidshus som opfylder alt, hvad man kan ønske sig af et luksushus.', N'sm-t/11.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (12, N'SM-T12', 1, N'aaaaaaa', N'sm-t/12.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (12, N'SM-T12', 1, N'Efter ønske fra vores kunder har vi udviklet denne nye type, hvor vi bl.a. har ændret sidehøjden. Typen er en videreudvikling af vores populære SM-T10. Huset indeholder bl.a. aktivitetsrum med billard/bordtennisbord, dart, m.m. Stort spabadeværelse, sauna, gæstetoilet med stor muret brusehjørne, lækkert køkken med alt i hårde hvide varer bl.a. amerikanerkøleskab. 5 værelser, entre med skabe, stor overbygget terrasse med glaspartier og meget mere som ikke kan beskrives, men som skal ses! Vi har med denne type forsøgt at skabe et fritidshus som opfylder alt, hvad man kan ønske sig af et luksushus.', N'sm-t/12.jpg')
 GO
 INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (13, N'SM-V1', 2, N'aaaaaaa', N'sm-v/1.jpg')
 GO
@@ -188,7 +189,7 @@ INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (18
 GO
 INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (19, N'SM-V6S', 2, N'aaaaaaa', N'sm-v/6S.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (20, N'SM-L2', 3, N'aaaaaaa', N'sm-l/2.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (20, N'SM-L2', 3, N'Vi har med dette længehus opfyldt et ønske fra vores kunder, som har en meget smal grund. Her er denne type meget velegnet. Bemærk det specielle overbyggede indgangsparti i siden, der giver huset et helt specielt look.', N'sm-l/2.jpg')
 GO
 SET IDENTITY_INSERT [dbo].[House] OFF
 GO
