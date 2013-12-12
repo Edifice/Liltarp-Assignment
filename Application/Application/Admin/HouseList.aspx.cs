@@ -18,7 +18,7 @@ namespace Application.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List.DataSource = _service.GetHouses();
+            List.DataSource = _service.GetHouses().OrderBy(a => a.Name);
             List.DataBind();
         }
     }
