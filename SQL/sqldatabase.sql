@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[User](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'1', N'SM-T2', N'1', N'aaaaaa', N'sm-t/2.jpg')
+INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'1', N'SM-T2', N'1', N'Typen SM-T2 giver med sin T-form gode og spændende muligheder for hyggelig indretning, og udvendig er der masser af lækroge på terrassen.Som det fremgår af grundplanen, er indretningen nærmest det ultimative med hensyn til et hus uden spildplads.', N'sm-t/2.jpg')
 GO
 INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'10', N'SM-T10', N'1', N'aaaaaaa', N'sm-t/10.jpg')
 GO
@@ -198,7 +198,7 @@ INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'1', N'SM-T')
 GO
 INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'2', N'SM-V')
 GO
-INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'3', NULL)
+INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'3', N'SM-L')
 GO
 INSERT [dbo].[User] ([ID], [E-mail], [Password]) VALUES (N'1', N'admin@liltarp.dk', N'foobar')
 GO
