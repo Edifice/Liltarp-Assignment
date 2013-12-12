@@ -14,11 +14,12 @@
     <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 <body>
+    <div class="gradient"></div>
     <div class="container">
         <form id="form1" runat="server">
             <div class="row">
-                <div class="col-sm-12">
-                    <asp:Image runat="server" ImageUrl="Images/site_logo.png" AlternateText="Logo" />
+                <div class="col-sm-12" style="text-align: center">
+                    <asp:Image runat="server" ImageUrl="Images/site_logo.png" AlternateText="Logo" CssClass="logo"/>
                 </div>
             </div>
             <nav class="navbar navbar-default" role="navigation">
@@ -40,9 +41,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fritidhus <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
+                                <asp:Repeater runat="server" ID="houseTypeRepeater">
+                                    <ItemTemplate>
+                                        <li><a href="/Houses.aspx?typeId=<%# Eval("Id") %>"><%# Eval("Name") %></a></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </li>
                         <li><asp:HyperLink runat="server" Text="Nybyggeri" NavigateUrl="~/Nybyggeri.aspx" /></li>

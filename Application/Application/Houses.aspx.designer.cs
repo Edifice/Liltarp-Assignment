@@ -13,12 +13,12 @@ namespace Application {
     public partial class Houses {
         
         /// <summary>
-        /// GridView control.
+        /// HouseList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.Repeater HouseList;
     }
 }
