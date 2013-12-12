@@ -22,7 +22,7 @@ namespace DAL
         [DataMember]
         public string HouseIdSerializable { get { return HouseID; } set { HouseID = value; } }
         [DataMember]
-        public int? SolvedBySerializable { get { return SolvedBy; } set { SolvedBy = value; } }
+        public string SolvedBySerializable { get { return SolvedBy; } set { SolvedBy = value; } }
         [DataMember]
         public bool? SolvedSerializable { get { return Solved; } set { Solved = value; } }
         [DataMember]

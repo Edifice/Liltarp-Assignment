@@ -39,17 +39,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTickets">
+  <xs:element name="GetTicket">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idSerializable" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTicketsResponse">
+  <xs:element name="GetTicketResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketsResult" nillable="true" type="q4:ArrayOfTicket" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketResult" nillable="true" type="q4:Ticket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,7 +61,7 @@
   <xs:element name="GetSolvedTicketsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetSolvedTicketsResult" nillable="true" type="q4:ArrayOfTicket" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetSolvedTicketsResult" nillable="true" type="q5:ArrayOfTicket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -73,7 +73,7 @@
   <xs:element name="GetUnsolvedTicketsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUnsolvedTicketsResult" nillable="true" type="q5:ArrayOfTicket" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUnsolvedTicketsResult" nillable="true" type="q6:ArrayOfTicket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -85,7 +85,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUsersResult" nillable="true" type="q6:ArrayOfUserSerializable" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUsersResult" nillable="true" type="q7:ArrayOfUserSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,7 +107,7 @@
   <xs:element name="NewTicket">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="ticket" nillable="true" type="q7:Ticket" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="ticket" nillable="true" type="q8:Ticket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -116,10 +116,36 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetTicketToSolved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToSolvedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToUnsolved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToUnsolvedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UpdateHouse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q7:House" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q9:House" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -1,20 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using DAL;
 
 namespace BLL
 {
     public class BusinessService : IBusinessService
     {
-        private Repository rep;
+        private readonly Repository _rep;
 
         public BusinessService()
         {
-            rep = new Repository();
-           
+            _rep = new Repository();
         }
-
 
         private HouseTypeSerializable TranslateHouseTypes(HouseType old)
         {
@@ -64,27 +61,27 @@ namespace BLL
 
         public List<HouseTypeSerializable> GetHouseTypes()
         {
-            return rep.GetHouseTypes().Select(TranslateHouseTypes).ToList();
+            return _rep.GetHouseTypes().Select(TranslateHouseTypes).ToList();
         }
 
         public List<HouseSerializable> GetHouses()
         {
-            return rep.GetHouses().Select(TranslateHouses).ToList();
+            return _rep.GetHouses().Select(TranslateHouses).ToList();
         }
 
         public HouseSerializable GetHouseById(string id)
         {
-            return TranslateHouses(rep.GetHouses().First(a => a.ID.Equals(id)));
+            return TranslateHouses(_rep.GetHouses().First(a => a.ID.Equals(id)));
         }
 
         public List<UserSerializable> GetUsers()
         {
-            return rep.GetUsers().Select(TranslateUsers).ToList();
+            return _rep.GetUsers().Select(TranslateUsers).ToList();
         }
 
         public string CheckLogin(string email, string password)
         {
-            var usr = this.GetUsers().Where(
+            var usr = GetUsers().Where(
                 a => a.Email == email &&
                 a.Password == password
                 );
@@ -110,37 +107,46 @@ namespace BLL
                 SolvedSerializable = ticket.SolvedSerializable,
                 UserTextSerializable = ticket.UserTextSerializable
             };
-                    rep.SetTicket(tick);
+            _rep.UpdateTicket(tick);
+        }
+
+        public void SetTicketToSolved(string ticketId, string solver)
+        {
+            Ticket item = GetTicket(ticketId);
+            item.Solved = true;
+            item.SolvedBy = solver;
+            _rep.UpdateTicket(item);
+        }
+
+        public void SetTicketToUnsolved(string ticketId, string solver)
+        {
+            Ticket item = GetTicket(ticketId);
+            item.Solved = false;
+            item.SolvedBy = null;
+            _rep.UpdateTicket(item);
         }
 
         public void UpdateHouse(House house)
         {
-            rep.UpdateHouse(house);
+            _rep.UpdateHouse(house);
         }
 
 
-        public List<Ticket> GetTickets(string idSerializable)
+        public Ticket GetTicket(string idSerializable)
         {
-            List<Ticket> shownTickets = new List<Ticket>();
-            foreach (var ticket in rep.GetTickets())
-            {
-                if (ticket.IdSerializable == idSerializable)
-                    shownTickets.Add(TranslateTickets(ticket));
-
-            }
-            return shownTickets;
+            return _rep.GetTickets().First(a => a.ID.Equals(idSerializable));
         }
 
 
         public List<Ticket> GetSolvedTickets()
         {
-            return rep.GetTickets().Where(a => a.Solved == true).Select(TranslateTickets).ToList();
+            return _rep.GetTickets().Where(a => a.Solved == true).Select(TranslateTickets).ToList();
         }
-       
+
 
         public List<Ticket> GetUnsolvedTickets()
         {
-            return rep.GetTickets().Where( a => a.Solved != true).Select(TranslateTickets).ToList();
+            return _rep.GetTickets().Where(a => a.Solved != true).Select(TranslateTickets).ToList();
         }
     }
 }

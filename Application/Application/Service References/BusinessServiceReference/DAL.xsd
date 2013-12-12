@@ -29,12 +29,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HouseSerializable" nillable="true" type="tns:HouseSerializable" />
-  <xs:complexType name="ArrayOfTicket">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ticket" nillable="true" type="tns:Ticket" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTicket" nillable="true" type="tns:ArrayOfTicket" />
   <xs:complexType name="Ticket">
     <xs:sequence>
       <xs:element minOccurs="0" name="EmailSerializable" nillable="true" type="xs:string" />
@@ -42,12 +36,18 @@
       <xs:element minOccurs="0" name="IdSerializable" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NameSerializable" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PhoneSerializable" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SolvedBySerializable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SolvedBySerializable" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SolvedSerializable" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="UserTextSerializable" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ticket" nillable="true" type="tns:Ticket" />
+  <xs:complexType name="ArrayOfTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ticket" nillable="true" type="tns:Ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTicket" nillable="true" type="tns:ArrayOfTicket" />
   <xs:complexType name="ArrayOfUserSerializable">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="UserSerializable" nillable="true" type="tns:UserSerializable" />

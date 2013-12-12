@@ -13,30 +13,21 @@ namespace Application.Admin {
     public partial class TicketList {
         
         /// <summary>
-        /// gv control.
+        /// tableUnsolved control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv;
+        protected global::System.Web.UI.WebControls.DataList tableUnsolved;
         
         /// <summary>
-        /// Label1 control.
+        /// tableSolved control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// gv2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv2;
+        protected global::System.Web.UI.WebControls.DataList tableSolved;
     }
 }
