@@ -11,6 +11,8 @@ namespace DAL
     [DataContract]
     public partial class Ticket
     {
+
+
         [DataMember]
         public string IdSerializable { get { return ID; } set { ID = value; } }
         [DataMember]

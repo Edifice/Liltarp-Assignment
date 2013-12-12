@@ -39,20 +39,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTicket">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idSerializable" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTicketResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketResult" nillable="true" type="q4:Ticket" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetSolvedTickets">
     <xs:complexType>
       <xs:sequence />
@@ -145,7 +131,7 @@
   <xs:element name="UpdateHouse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q9:House" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q8:House" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
