@@ -19,7 +19,7 @@ namespace DAL
             this.House = new HashSet<House>();
         }
     
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string Name { get; set; }
     
         public virtual ICollection<House> House { get; set; }

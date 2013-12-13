@@ -4,14 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6902c344930943538e9492e6bcd87782" Name="Diagram1">
-        <EntityTypeShape EntityType="liltarpModel.House" Width="1.5" PointX="4.625" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="liltarpModel.HouseType" Width="1.5" PointX="2.375" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="liltarpModel.Ticket" Width="1.5" PointX="6.875" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="liltarpModel.User" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ffb81519edd34db395f38d4dc110c798" Name="Diagram1">
+        <EntityTypeShape EntityType="liltarpModel.House" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="liltarpModel.HouseType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="liltarpModel.Ticket" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="liltarpModel.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="liltarpModel.FK_House_HouseType" ManuallyRouted="false" />
-        <AssociationConnector Association="liltarpModel.FK_Ticket_House" ManuallyRouted="false" />
-        <AssociationConnector Association="liltarpModel.FK_Ticket_User" ManuallyRouted="false" />
+        <AssociationConnector Association="liltarpModel.FK_Ticket_House1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

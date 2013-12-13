@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BLL" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IBusinessService_GetHouseTypes_InputMessage">
@@ -19,11 +19,29 @@
   <wsdl:message name="IBusinessService_GetHouses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetHousesResponse" />
   </wsdl:message>
-  <wsdl:message name="IBusinessService_GetTickets_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTickets" />
+  <wsdl:message name="IBusinessService_GetHouseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseById" />
   </wsdl:message>
-  <wsdl:message name="IBusinessService_GetTickets_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  <wsdl:message name="IBusinessService_GetHouseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicket" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSolvedTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolvedTickets" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetSolvedTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolvedTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUnsolvedTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnsolvedTickets" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_GetUnsolvedTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnsolvedTicketsResponse" />
   </wsdl:message>
   <wsdl:message name="IBusinessService_GetUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUsers" />
@@ -37,6 +55,30 @@
   <wsdl:message name="IBusinessService_CheckLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IBusinessService_NewTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTicket" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_NewTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_SetTicketToSolved_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTicketToSolved" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_SetTicketToSolved_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTicketToSolvedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_SetTicketToUnsolved_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTicketToUnsolved" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_SetTicketToUnsolved_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTicketToUnsolvedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_UpdateHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHouse" />
+  </wsdl:message>
+  <wsdl:message name="IBusinessService_UpdateHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHouseResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBusinessService">
     <wsdl:operation name="GetHouseTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseTypes" message="tns:IBusinessService_GetHouseTypes_InputMessage" />
@@ -46,9 +88,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouses" message="tns:IBusinessService_GetHouses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHousesResponse" message="tns:IBusinessService_GetHouses_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetTickets">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTickets" message="tns:IBusinessService_GetTickets_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTicketsResponse" message="tns:IBusinessService_GetTickets_OutputMessage" />
+    <wsdl:operation name="GetHouseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetHouseById" message="tns:IBusinessService_GetHouseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetHouseByIdResponse" message="tns:IBusinessService_GetHouseById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetTicket" message="tns:IBusinessService_GetTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetTicketResponse" message="tns:IBusinessService_GetTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolvedTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetSolvedTickets" message="tns:IBusinessService_GetSolvedTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetSolvedTicketsResponse" message="tns:IBusinessService_GetSolvedTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsolvedTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetUnsolvedTickets" message="tns:IBusinessService_GetUnsolvedTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/GetUnsolvedTicketsResponse" message="tns:IBusinessService_GetUnsolvedTickets_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/GetUsers" message="tns:IBusinessService_GetUsers_InputMessage" />
@@ -57,6 +111,22 @@
     <wsdl:operation name="CheckLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/CheckLogin" message="tns:IBusinessService_CheckLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/CheckLoginResponse" message="tns:IBusinessService_CheckLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/NewTicket" message="tns:IBusinessService_NewTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/NewTicketResponse" message="tns:IBusinessService_NewTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTicketToSolved">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/SetTicketToSolved" message="tns:IBusinessService_SetTicketToSolved_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/SetTicketToSolvedResponse" message="tns:IBusinessService_SetTicketToSolved_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTicketToUnsolved">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/SetTicketToUnsolved" message="tns:IBusinessService_SetTicketToUnsolved_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/SetTicketToUnsolvedResponse" message="tns:IBusinessService_SetTicketToUnsolved_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessService/UpdateHouse" message="tns:IBusinessService_UpdateHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessService/UpdateHouseResponse" message="tns:IBusinessService_UpdateHouse_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBusinessService" type="tns:IBusinessService">
@@ -79,8 +149,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetTickets">
-      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTickets" style="document" />
+    <wsdl:operation name="GetHouseById">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetHouseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicket">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolvedTickets">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetSolvedTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnsolvedTickets">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/GetUnsolvedTickets" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,6 +196,42 @@
     </wsdl:operation>
     <wsdl:operation name="CheckLogin">
       <soap:operation soapAction="http://tempuri.org/IBusinessService/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewTicket">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/NewTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTicketToSolved">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/SetTicketToSolved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTicketToUnsolved">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/SetTicketToUnsolved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <soap:operation soapAction="http://tempuri.org/IBusinessService/UpdateHouse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

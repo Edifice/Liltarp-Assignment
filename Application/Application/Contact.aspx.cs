@@ -1,36 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Application.BusinessServiceReference;
 
 namespace Application
 {
     public partial class Contact : System.Web.UI.Page
     {
-        private BusinessServiceClient service;
+        private BusinessServiceClient _service;
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            service = new BusinessServiceClient();
+            _service = new BusinessServiceClient();
         }
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddHouse.DataSource = service.GetHouses();
+            ddHouse.DataSource = _service.GetHouses();
             ddHouse.DataBind();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            var ticket = new TicketSerializable()
+            var ticket = new Ticket
             {
-                Email = txtEmail.Text,
-                Name = txtName.Text,
-                Phone = txtPhone.Text
+          
+                EmailSerializable = txtEmail.Text,
+                NameSerializable = txtName.Text,
+                PhoneSerializable = txtPhone.Text,
+                HouseIdSerializable = ddHouse.SelectedValue,
+                UserTextSerializable = txtIssue.Text,
             };
+
+            _service.NewTicket(ticket);
+            Response.Redirect("Contact.aspx");
         }
     }
 }

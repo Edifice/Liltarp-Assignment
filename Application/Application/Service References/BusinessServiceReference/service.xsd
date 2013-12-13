@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/BLL" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
   <xs:element name="GetHouseTypes">
     <xs:complexType>
       <xs:sequence />
@@ -9,7 +9,7 @@
   <xs:element name="GetHouseTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetHouseTypesResult" nillable="true" type="q1:ArrayOfHouseTypeSerializable" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetHouseTypesResult" nillable="true" type="q1:ArrayOfHouseTypeSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -21,19 +21,59 @@
   <xs:element name="GetHousesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetHousesResult" nillable="true" type="q2:ArrayOfHouseSerializable" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetHousesResult" nillable="true" type="q2:ArrayOfHouseSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTickets">
+  <xs:element name="GetHouseById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHouseByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetHouseByIdResult" nillable="true" type="q3:HouseSerializable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSerializable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetTicketResult" nillable="true" type="q4:Ticket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSolvedTickets">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTicketsResponse">
+  <xs:element name="GetSolvedTicketsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetTicketsResult" nillable="true" type="q3:ArrayOfTicketSerializable" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetSolvedTicketsResult" nillable="true" type="q5:ArrayOfTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnsolvedTickets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnsolvedTicketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUnsolvedTicketsResult" nillable="true" type="q6:ArrayOfTicket" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +85,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BLL" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserSerializable" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="GetUsersResult" nillable="true" type="q7:ArrayOfUserSerializable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,8 +100,58 @@
   <xs:element name="CheckLoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CheckLoginResult" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CheckLoginResult" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="ticket" nillable="true" type="q8:Ticket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTicketResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToSolved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToSolvedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToUnsolved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTicketToUnsolvedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="house" nillable="true" type="q9:House" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHouseResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

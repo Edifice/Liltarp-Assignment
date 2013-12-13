@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using DAL;
 
 namespace BLL
 {
@@ -14,12 +15,33 @@ namespace BLL
         List<HouseSerializable> GetHouses();
 
         [OperationContract]
-        List<TicketSerializable> GetTickets();
+        HouseSerializable GetHouseById(string id);
 
+        [OperationContract]
+        Ticket GetTicket(string idSerializable);
+        
+        [OperationContract]
+        List<Ticket> GetSolvedTickets();
+       
+        [OperationContract]
+        List<Ticket> GetUnsolvedTickets();
+        
         [OperationContract]
         List<UserSerializable> GetUsers();
 
         [OperationContract]
-        int? CheckLogin(string email, string password);
+        string CheckLogin(string email, string password);
+
+        [OperationContract]
+        void NewTicket(Ticket ticket);
+
+        [OperationContract]
+        void SetTicketToSolved(string ticketId, string solver);
+
+        [OperationContract]
+        void SetTicketToUnsolved(string ticketId, string solver);
+
+        [OperationContract]
+        void UpdateHouse(House house);
     }
 }

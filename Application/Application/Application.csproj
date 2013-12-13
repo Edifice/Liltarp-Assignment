@@ -75,10 +75,11 @@
     <Content Include="Admin\EditHouse.aspx" />
     <Content Include="Admin\HouseList.aspx" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\TicketList.aspx" />
+    <Content Include="BYGGaranti.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Images\Home_icon_black.png" />
-    <Content Include="Images\liltarp.png" />
+    <Content Include="Houses.aspx" />
     <Content Include="Images\pictures\frontside\img1.bw.jpg" />
     <Content Include="Images\pictures\frontside\img1.jpg" />
     <Content Include="Images\pictures\frontside\img2.bw.jpg" />
@@ -91,57 +92,6 @@
     <Content Include="Images\pictures\frontside\img5.jpg" />
     <Content Include="Images\pictures\frontside\img6.bw.jpg" />
     <Content Include="Images\pictures\frontside\img6.jpg" />
-    <Content Include="Images\pictures\interioer\1.jpg" />
-    <Content Include="Images\pictures\interioer\10.jpg" />
-    <Content Include="Images\pictures\interioer\11.jpg" />
-    <Content Include="Images\pictures\interioer\12.jpg" />
-    <Content Include="Images\pictures\interioer\13.jpg" />
-    <Content Include="Images\pictures\interioer\14.jpg" />
-    <Content Include="Images\pictures\interioer\15.jpg" />
-    <Content Include="Images\pictures\interioer\16.jpg" />
-    <Content Include="Images\pictures\interioer\17.jpg" />
-    <Content Include="Images\pictures\interioer\18.jpg" />
-    <Content Include="Images\pictures\interioer\19.jpg" />
-    <Content Include="Images\pictures\interioer\2.jpg" />
-    <Content Include="Images\pictures\interioer\20.jpg" />
-    <Content Include="Images\pictures\interioer\21.jpg" />
-    <Content Include="Images\pictures\interioer\22.jpg" />
-    <Content Include="Images\pictures\interioer\23.jpg" />
-    <Content Include="Images\pictures\interioer\24.jpg" />
-    <Content Include="Images\pictures\interioer\25.jpg" />
-    <Content Include="Images\pictures\interioer\26.jpg" />
-    <Content Include="Images\pictures\interioer\27.jpg" />
-    <Content Include="Images\pictures\interioer\28.jpg" />
-    <Content Include="Images\pictures\interioer\29.jpg" />
-    <Content Include="Images\pictures\interioer\3.jpg" />
-    <Content Include="Images\pictures\interioer\30.jpg" />
-    <Content Include="Images\pictures\interioer\31.jpg" />
-    <Content Include="Images\pictures\interioer\32.jpg" />
-    <Content Include="Images\pictures\interioer\33.jpg" />
-    <Content Include="Images\pictures\interioer\34.jpg" />
-    <Content Include="Images\pictures\interioer\35.jpg" />
-    <Content Include="Images\pictures\interioer\36.jpg" />
-    <Content Include="Images\pictures\interioer\37.jpg" />
-    <Content Include="Images\pictures\interioer\4.jpg" />
-    <Content Include="Images\pictures\interioer\5.jpg" />
-    <Content Include="Images\pictures\interioer\6.jpg" />
-    <Content Include="Images\pictures\interioer\7.jpg" />
-    <Content Include="Images\pictures\interioer\8.jpg" />
-    <Content Include="Images\pictures\interioer\9.jpg" />
-    <Content Include="Images\pictures\nybyggeri\diverse-billeder-af-huse.jpg" />
-    <Content Include="Images\pictures\nybyggeri\diverse-billeder-af-huse2.jpg" />
-    <Content Include="Images\pictures\nybyggeri\hans_thuesensvej.jpg" />
-    <Content Include="Images\pictures\nybyggeri\macartney.jpg" />
-    <Content Include="Images\pictures\nybyggeri\mette_og_wolfgang.jpg" />
-    <Content Include="Images\pictures\nybyggeri\viggo-theilgaard-skallingvej-36.jpg" />
-    <Content Include="Images\pictures\ombygninger\bygning_hjerting.jpg" />
-    <Content Include="Images\pictures\ombygninger\bygning_hjerting_vert.jpg" />
-    <Content Include="Images\pictures\ombygninger\henne_fritidhus.jpg" />
-    <Content Include="Images\pictures\ombygninger\henne_fritidhus_vert.jpg" />
-    <Content Include="Images\pictures\ombygninger\jerrigsvej_saedding.jpg" />
-    <Content Include="Images\pictures\ombygninger\jerrigsvej_saedding_vert.jpg" />
-    <Content Include="Images\pictures\ombygninger\sommerhus_blaavand.jpg" />
-    <Content Include="Images\pictures\ombygninger\sommerhus_blaavand_vert.jpg" />
     <Content Include="Images\pictures\sm-l\2.jpg" />
     <Content Include="Images\pictures\sm-l\2a.jpg" />
     <Content Include="Images\pictures\sm-l\2map.gif" />
@@ -243,19 +193,26 @@
     <Content Include="Images\pictures\sm-v\6Sd.jpg" />
     <Content Include="Images\pictures\sm-v\6Smap.jpg" />
     <Content Include="Images\site_logo.png" />
+    <Content Include="LindabTagXpert.aspx" />
+    <Content Include="Nybyggeri.aspx" />
+    <Content Include="Ombygninger.aspx" />
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.HouseSerializable.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.HouseTypeSerializable.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.TicketSerializable.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.UserSerializable.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="MasterPage.Master" />
+    <Content Include="Service References\BusinessServiceReference\Application.BusinessServiceReference.Ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Admin\AdminMaster.master" />
+    <None Include="Service References\BusinessServiceReference\DAL.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\BusinessServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -264,6 +221,13 @@
     <None Include="Service References\BusinessServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminMaster.master.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.master.designer.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditHouse.aspx.cs">
       <DependentUpon>EditHouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +249,20 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\TicketList.aspx.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TicketList.aspx.designer.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BYGGaranti.aspx.cs">
+      <DependentUpon>BYGGaranti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BYGGaranti.aspx.designer.cs">
+      <DependentUpon>BYGGaranti.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,12 +277,40 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Houses.aspx.cs">
+      <DependentUpon>Houses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Houses.aspx.designer.cs">
+      <DependentUpon>Houses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LindabTagXpert.aspx.cs">
+      <DependentUpon>LindabTagXpert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LindabTagXpert.aspx.designer.cs">
+      <DependentUpon>LindabTagXpert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nybyggeri.aspx.cs">
+      <DependentUpon>Nybyggeri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nybyggeri.aspx.designer.cs">
+      <DependentUpon>Nybyggeri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ombygninger.aspx.cs">
+      <DependentUpon>Ombygninger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ombygninger.aspx.designer.cs">
+      <DependentUpon>Ombygninger.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BusinessServiceReference\Reference.cs">
@@ -317,24 +323,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="StyleSheet.css" />
+    <Content Include="Vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Vendor\jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\pictures\desktop.ini" />
     <Content Include="Images\pictures\frontside\desktop.ini" />
-    <Content Include="Images\pictures\interioer\desktop.ini" />
-    <Content Include="Images\pictures\nybyggeri\desktop.ini" />
-    <Content Include="Images\pictures\ombygninger\desktop.ini" />
-    <Content Include="Images\pictures\ombygninger\Thumbs.db" />
     <Content Include="Images\pictures\sm-l\desktop.ini" />
     <Content Include="Images\pictures\sm-t\desktop.ini" />
     <Content Include="Images\pictures\sm-t\Thumbs.db" />
     <Content Include="Images\pictures\sm-v\desktop.ini" />
     <Content Include="Images\pictures\sm-v\Thumbs.db" />
-    <None Include="Service References\BusinessServiceReference\BLL.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\BusinessServiceReference\service.wsdl" />
     <None Include="Service References\BusinessServiceReference\service.xsd">
       <SubType>Designer</SubType>
@@ -342,6 +347,9 @@
     <None Include="Service References\BusinessServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

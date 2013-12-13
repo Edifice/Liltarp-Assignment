@@ -19,9 +19,9 @@ namespace DAL
             this.Ticket = new HashSet<Ticket>();
         }
     
-        public int Id { get; set; }
+        public string ID { get; set; }
         public string Name { get; set; }
-        public int TypeID { get; set; }
+        public string TypeID { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
     

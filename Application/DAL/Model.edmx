@@ -8,39 +8,24 @@
         <EntityContainer Name="liltarpModelStoreContainer">
           <EntitySet Name="House" EntityType="liltarpModel.Store.House" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="HouseType" EntityType="liltarpModel.Store.HouseType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Ticket" EntityType="liltarpModel.Store.Ticket" store:Type="Tables" store:Schema="dbo" store:Name="Ticket">
-            <DefiningQuery>SELECT 
-      [Ticket].[ID] AS [ID], 
-      [Ticket].[Name] AS [Name], 
-      [Ticket].[E-mail] AS [E-mail], 
-      [Ticket].[Phone] AS [Phone], 
-      [Ticket].[HouseID] AS [HouseID], 
-      [Ticket].[SolvedBy] AS [SolvedBy], 
-      [Ticket].[Solved] AS [Solved], 
-      [Ticket].[UserText] AS [UserText]
-      FROM [dbo].[Ticket] AS [Ticket]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Ticket" EntityType="liltarpModel.Store.Ticket" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="User" EntityType="liltarpModel.Store.User" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_House_HouseType" Association="liltarpModel.Store.FK_House_HouseType">
             <End Role="HouseType" EntitySet="HouseType" />
             <End Role="House" EntitySet="House" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ticket_House" Association="liltarpModel.Store.FK_Ticket_House">
+          <AssociationSet Name="FK_Ticket_House1" Association="liltarpModel.Store.FK_Ticket_House1">
             <End Role="House" EntitySet="House" />
-            <End Role="Ticket" EntitySet="Ticket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ticket_User" Association="liltarpModel.Store.FK_Ticket_User">
-            <End Role="User" EntitySet="User" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="House">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="38" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="TypeID" Type="nvarchar" Nullable="false" MaxLength="38" />
           <Property Name="Description" Type="text" Nullable="false" />
           <Property Name="Image" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
@@ -48,36 +33,27 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="38" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'liltarp.dbo.Ticket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
         <EntityType Name="Ticket">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="E-mail" />
-            <PropertyRef Name="Phone" />
-            <PropertyRef Name="HouseID" />
-            <PropertyRef Name="SolvedBy" />
-            <PropertyRef Name="Solved" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="38" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="E-mail" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="HouseID" Type="int" Nullable="false" />
-          <Property Name="SolvedBy" Type="int" Nullable="false" />
-          <Property Name="Solved" Type="bit" Nullable="false" />
+          <Property Name="HouseID" Type="nvarchar" MaxLength="38" />
+          <Property Name="SolvedBy" Type="nvarchar" MaxLength="38" />
+          <Property Name="Solved" Type="bit" />
           <Property Name="UserText" Type="text" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="38" />
           <Property Name="E-mail" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
@@ -93,27 +69,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ticket_House">
-          <End Role="House" Type="liltarpModel.Store.House" Multiplicity="1" />
+        <Association Name="FK_Ticket_House1">
+          <End Role="House" Type="liltarpModel.Store.House" Multiplicity="0..1" />
           <End Role="Ticket" Type="liltarpModel.Store.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="House">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Ticket">
-              <PropertyRef Name="HouseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Ticket_User">
-          <End Role="User" Type="liltarpModel.Store.User" Multiplicity="1" />
-          <End Role="Ticket" Type="liltarpModel.Store.Ticket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Ticket">
-              <PropertyRef Name="SolvedBy" />
+              <PropertyRef Name="HouseID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -131,64 +95,52 @@
             <End Role="HouseType" EntitySet="HouseType" />
             <End Role="House" EntitySet="House" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ticket_House" Association="liltarpModel.FK_Ticket_House">
+          <AssociationSet Name="FK_Ticket_House1" Association="liltarpModel.FK_Ticket_House1">
             <End Role="House" EntitySet="House" />
-            <End Role="Ticket" EntitySet="Ticket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ticket_User" Association="liltarpModel.FK_Ticket_User">
-            <End Role="User" EntitySet="User" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="House">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="38" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="TypeID" Type="String" Nullable="false" MaxLength="38" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Image" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="HouseType" Relationship="liltarpModel.FK_House_HouseType" FromRole="House" ToRole="HouseType" />
-          <NavigationProperty Name="Ticket" Relationship="liltarpModel.FK_Ticket_House" FromRole="House" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket" Relationship="liltarpModel.FK_Ticket_House1" FromRole="House" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="HouseType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="38" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="House" Relationship="liltarpModel.FK_House_HouseType" FromRole="HouseType" ToRole="House" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="E_mail" />
-            <PropertyRef Name="Phone" />
-            <PropertyRef Name="HouseID" />
-            <PropertyRef Name="SolvedBy" />
-            <PropertyRef Name="Solved" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="38" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="HouseID" Type="Int32" Nullable="false" />
-          <Property Name="SolvedBy" Type="Int32" Nullable="false" />
-          <Property Name="Solved" Type="Boolean" Nullable="false" />
+          <Property Name="HouseID" Type="String" MaxLength="38" Unicode="true" FixedLength="false" />
+          <Property Name="SolvedBy" Type="String" MaxLength="38" Unicode="true" FixedLength="false" />
+          <Property Name="Solved" Type="Boolean" />
           <Property Name="UserText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="House" Relationship="liltarpModel.FK_Ticket_House" FromRole="Ticket" ToRole="House" />
-          <NavigationProperty Name="User" Relationship="liltarpModel.FK_Ticket_User" FromRole="Ticket" ToRole="User" />
+          <NavigationProperty Name="House" Relationship="liltarpModel.FK_Ticket_House1" FromRole="Ticket" ToRole="House" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="38" Unicode="true" FixedLength="false" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Ticket" Relationship="liltarpModel.FK_Ticket_User" FromRole="User" ToRole="Ticket" />
         </EntityType>
         <Association Name="FK_House_HouseType">
           <End Role="HouseType" Type="liltarpModel.HouseType" Multiplicity="1" />
@@ -202,27 +154,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ticket_House">
-          <End Role="House" Type="liltarpModel.House" Multiplicity="1" />
+        <Association Name="FK_Ticket_House1">
+          <End Role="House" Type="liltarpModel.House" Multiplicity="0..1" />
           <End Role="Ticket" Type="liltarpModel.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="House">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Ticket">
-              <PropertyRef Name="HouseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Ticket_User">
-          <End Role="User" Type="liltarpModel.User" Multiplicity="1" />
-          <End Role="Ticket" Type="liltarpModel.Ticket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Ticket">
-              <PropertyRef Name="SolvedBy" />
+              <PropertyRef Name="HouseID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -235,7 +175,7 @@
           <EntitySetMapping Name="House">
             <EntityTypeMapping TypeName="liltarpModel.House">
               <MappingFragment StoreEntitySet="House">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

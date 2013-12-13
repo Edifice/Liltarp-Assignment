@@ -14,15 +14,8 @@ namespace DAL
     
     public partial class User
     {
-        public User()
-        {
-            this.Ticket = new HashSet<Ticket>();
-        }
-    
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string E_mail { get; set; }
         public string Password { get; set; }
-    
-        public virtual ICollection<Ticket> Ticket { get; set; }
     }
 }
