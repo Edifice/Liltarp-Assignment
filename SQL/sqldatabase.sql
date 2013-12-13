@@ -165,8 +165,7 @@ INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (3,
 GO
 INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (4, N'SM-T5', 1, N'Vi har med denne nye T-type opfyldt et stort ønske fra vore kunder om en type, som har 3 store soveværelser samt et rum til solarium, og hvilket vi har lavet her i denne type, hvor der er plads til et stort sandwich-solarium i gæstetoilettet. Men som det gør sig gældende med vores øvrige modeller, kan denne type også kombineres på mange måder.', N'sm-t/5.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (5, N'SM-T5S', 1, N'Vi har med denne nye T-type opfyldt et stort ønske fra vore kunder om en type, som har 3 store soveværelser samt et rum til solarium, og hvilket vi har lavet her i denne type, hvor der er plads til et stort sandwich solarium i gæstetoilettet. Men som det gør sig gældende med vores øvrige modeller, kan denne type også kombineres på mange måder. 
-NB: Vi har forlænget denne type med 1,2 m. og derved har vi fået et større redskabsrum + overbygget terrasse ved hovedindgang + dejlig vindfang med faste skabe. Ligeledes er der monteret terrassedør fra soveværelset.', N'sm-t/5S.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (5, N'SM-T5S', 1, N'Vi har med denne nye T-type opfyldt et stort ønske fra vore kunder om en type, som har 3 store soveværelser samt et rum til solarium, og hvilket vi har lavet her i denne type, hvor der er plads til et stort sandwich solarium i gæstetoilettet. Men som det gør sig gældende med vores øvrige modeller, kan denne type også kombineres på mange måder. NB: Vi har forlænget denne type med 1,2 m. og derved har vi fået et større redskabsrum + overbygget terrasse ved hovedindgang + dejlig vindfang med faste skabe. Ligeledes er der monteret terrassedør fra soveværelset.', N'sm-t/5S.jpg')
 GO
 INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (6, N'SM-T6', 1, N'Hermed præsenterer vi vores sidste nye T-type, her i stråtagudførelse. Typen er en videreudvikling af vor populære SM-T 5, hvor huset her er udført med forsænket pejsestue, muret skorsten og brændeovn, spisestue og opholdsstue med tv-hjørne ellers er indretningen som type SM-T5s.', N'sm-t/6.jpg')
 GO
@@ -182,25 +181,21 @@ INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (11
 GO
 INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (12, N'SM-T12', 1, N'Efter ønske fra vores kunder har vi udviklet denne nye type, hvor vi bl.a. har ændret sidehøjden. Typen er en videreudvikling af vores populære SM-T10. Huset indeholder bl.a. aktivitetsrum med billard/bordtennisbord, dart, m.m. Stort spabadeværelse, sauna, gæstetoilet med stor muret brusehjørne, lækkert køkken med alt i hårde hvide varer bl.a. amerikanerkøleskab. 5 værelser, entre med skabe, stor overbygget terrasse med glaspartier og meget mere som ikke kan beskrives, men som skal ses! Vi har med denne type forsøgt at skabe et fritidshus som opfylder alt, hvad man kan ønske sig af et luksushus.', N'sm-t/12.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (13, N'SM-V1', 2, N'aaaaaaa', N'sm-v/1.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (13, N'SM-V1', 2, N'Vores populære vinkelhus-serie blev startet helt tilbage i 1973, men er selvfølgelig blevet videreudviklet gennem årene. Typen SM-V1 har en funktionel indretning og en god planløsning uden spildplads, og vinkelhuset giver mulighed for dejlige har en funktionel indretning og en god planløsning uden spildplads, og vinkelhuset giver mulighed for dejlige hygge og lækroge på terrassen.', N'sm-v/1.jpg')
 GO
-INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (14, N'SM-V2', 2, N'aaaaaaa', N'sm-v/2.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (14, N'SM-V2', 2, N'Vores populære vinkelhus-serie blev startet helt tilbage i 1973, men er selvfølgelig blevet videreudviklet gennem årene. Typen SM-V2 har en funktionel indretning og en god planløsning uden spildplads, og vinkelhuset giver mulighed for dejlige hygge og lækroge på terrassen.', N'sm-v/2.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'20', N'SM-L2', N'3', N'aaaaaaa', N'sm-l/2.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (15, N'SM-V3S', 2, N'Her er videreudviklingen af vor vinkelhusserie, hvor huset er udstyret med spa- badeværelse, gæstetoilet og speciel terrasseparti, som giver mere plads i stuen ved brændeovnen samt Velux ovenlysparti i køkkenet.', N'sm-v/3S.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'3', N'SM-T4', N'1', N'aaaaaaa', N'sm-t/4.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (16, N'SM-V3SS', 2, N'Som det fremgår af grundplanen, har vi udviklet en ny type til vores populære vinkelhusserie, som tilgodeser nogle af de ønsker vores kunder har påpeget med hensyn til bl.a. 3 store soveværelser, gæstetoilet med plads til sandwich solarium, ekstra stor overbygget terrasse ved indgangsdør samt lækker dobbelt Velux ovenlysparti i stuen.', N'sm-v/3SS.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'4', N'SM-T5', N'1', N'aaaaaaa', N'sm-t/5.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (17, N'SM-V4', 2, N'Alle vore typer kan udføres med stråtag, som her, hvor det er vores type SM-V4. Også i denne type er der en lækker nedsænket pejsestue, opholdsstue og spisestue med direkte åbning til køkkenafdeling og meget mere…', N'sm-v/4.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'5', N'SM-T5S', N'1', N'aaaaaaa', N'sm-t/5S.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (18, N'SM-V5S', 2, N'Vores erfaring med opførelse af individuelle kvalitetsfritidshuse har resulteret i udvikling af denne vinkeltype med bl.a. stort spa-badeværelse, stort gæstetoilet med bruseniche samt lækker nedsænket pejsestue med direkte udgang til stor terrasse og meget mere…', N'sm-v/5S.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'6', N'SM-T6', N'1', N'aaaaaaa', N'sm-t/6.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (19, N'SM-V6S', 2, N'Her har vi vores største type i vort standardprogram. Huset er et super lækkert hus med alt, hvad man måtte ønske sig af et fritidshus. Huset har to lækre badeværelser, hvor det ene er med stor spa, spændende køkken med dobbelt Velux ovenlyskarnap, som giver masser af dejligt lys ind i køkkenet, bryggers med vaskemaskine og tørre- tumbler, nedsænket pejsestue og meget mere…', N'sm-v/6S.jpg')
 GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'7', N'SM-T7', N'1', N'aaaaaaa', N'sm-t/7.jpg')
-GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'8', N'SM-T8', N'1', N'aaaaaaa', N'sm-t/8.jpg')
-GO
-INSERT [dbo].[House] ([ID], [Name], [TypeID], [Description], [Image]) VALUES (N'9', N'SM-T9', N'1', N'aaaaaaa', N'sm-t/9.jpg')
+INSERT [dbo].[House] ([Id], [Name], [TypeID], [Description], [Image]) VALUES (20, N'SM-L2', 3, N'Vi har med dette længehus opfyldt et ønske fra vores kunder, som har en meget smal grund. Her er denne type meget velegnet. Bemærk det specielle overbyggede indgangsparti i siden, der giver huset et helt specielt look.', N'sm-l/2.jpg')
 GO
 INSERT [dbo].[HouseType] ([ID], [Name]) VALUES (N'1', N'SM-T')
 GO
