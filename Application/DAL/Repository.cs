@@ -74,5 +74,12 @@ namespace DAL
 
             }
         }
+
+
+        public void RemoveHouse(string id)
+        {
+            _model.House.Remove(_model.House.Find(id));
+            _model.SaveChanges();
+        }
     }
 }

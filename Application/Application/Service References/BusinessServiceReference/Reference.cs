@@ -710,6 +710,12 @@ namespace Application.BusinessServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/UpdateHouse", ReplyAction="http://tempuri.org/IBusinessService/UpdateHouseResponse")]
         System.Threading.Tasks.Task UpdateHouseAsync(Application.BusinessServiceReference.House house);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/RemoveHouse", ReplyAction="http://tempuri.org/IBusinessService/RemoveHouseResponse")]
+        void RemoveHouse(string houseId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBusinessService/RemoveHouse", ReplyAction="http://tempuri.org/IBusinessService/RemoveHouseResponse")]
+        System.Threading.Tasks.Task RemoveHouseAsync(string houseId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -833,6 +839,14 @@ namespace Application.BusinessServiceReference {
         
         public System.Threading.Tasks.Task UpdateHouseAsync(Application.BusinessServiceReference.House house) {
             return base.Channel.UpdateHouseAsync(house);
+        }
+        
+        public void RemoveHouse(string houseId) {
+            base.Channel.RemoveHouse(houseId);
+        }
+        
+        public System.Threading.Tasks.Task RemoveHouseAsync(string houseId) {
+            return base.Channel.RemoveHouseAsync(houseId);
         }
     }
 }

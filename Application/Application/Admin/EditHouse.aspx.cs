@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Application.BusinessServiceReference;
 
 namespace Application.Admin
@@ -11,7 +6,7 @@ namespace Application.Admin
     public partial class EditHouse : System.Web.UI.Page
     {
         private BusinessServiceClient _service;
-        private string id = "";
+        public string Id = "";
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -24,7 +19,7 @@ namespace Application.Admin
                 if (!Request.Params["id"].Equals(""))
                 {
                     HouseSerializable house = _service.GetHouseById(Request.Params["id"]);
-                    id = house.Id;
+                    Id = house.Id;
 
                     form_id.Text = house.Id;
                     if (!IsPostBack)
@@ -46,12 +41,21 @@ namespace Application.Admin
             var a = form_desc.Text;
             _service.UpdateHouse(new House()
             {
-                ID = id,
+                ID = Id,
                 TypeID = form_houseType.SelectedValue,
                 Description = form_desc.Text,
                 Name = form_name.Text,
                 Image = form_img.Text
             });
+        }
+
+        protected void form_delete_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(Id))
+            {
+                _service.RemoveHouse(Id);
+                Response.Redirect("~/Admin/HouseList.aspx");
+            }
         }
     }
 }

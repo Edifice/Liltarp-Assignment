@@ -28,7 +28,14 @@
                     <asp:Label ID="Label5" runat="server" Text="Image" AssociatedControlID="form_img"></asp:Label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="form_img" />
                 </div>
-                <asp:Button ID="form_save" runat="server" Text="Save" OnClick="form_save_Click" />
+                <asp:Button ID="form_save" runat="server" Text="Save" OnClick="form_save_Click" CssClass="btn btn-success" />
+                <% if (!string.IsNullOrEmpty(Id))
+                   {
+                        %>
+                        <asp:Button ID="form_delete" runat="server" Text="Delete" OnClick="form_delete_Click" CssClass="btn btn-danger" />
+                        <%
+                   } 
+                %>
             </div>
         </div>
     </div>

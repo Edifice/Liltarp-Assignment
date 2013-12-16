@@ -131,6 +131,11 @@ namespace BLL
             _rep.UpdateHouse(house);
         }
 
+        public void RemoveHouse(string houseId)
+        {
+            _rep.RemoveHouse(houseId);
+        }
+
 
         public Ticket GetTicket(string idSerializable)
         {
