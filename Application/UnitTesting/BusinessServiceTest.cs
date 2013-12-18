@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using BLL;
@@ -12,7 +13,7 @@ namespace UnitTesting
 {
 
 
-
+    [TestFixture]
     internal class BusinessServiceTest
     {
         private BusinessService service;
@@ -22,12 +23,15 @@ namespace UnitTesting
         private Ticket ticket4;
         private DAL.House house1;
         private DAL.House house2;
-        private User user1;
-        private HouseType houseTypeCount;
-       
         
-        [SetUp]
-        public void Start()
+        
+         
+  
+  
+    [SetUp] public void Init()
+   
+
+
         {
             service = new BusinessService();
 
@@ -47,7 +51,9 @@ namespace UnitTesting
                 E_mail = "runge@hotmail.com",
                 Phone = "31213820",
                 HouseID = "1",
-                UserText = "test 2"
+                UserText = "test 2",
+                Solved =  true,
+                SolvedBy = "1"
             };
 
             ticket3 = new Ticket()
@@ -57,7 +63,9 @@ namespace UnitTesting
                 E_mail = "runge47@hotmail.com",
                 Phone = "23456",
                 HouseID = "3",
-                UserText = "test"
+                UserText = "test",
+           
+
             };
             ticket4 = new Ticket()
             {
@@ -85,22 +93,22 @@ namespace UnitTesting
                 Image = "sm-l/2.jpg"
 
             };
-            user1 = new User()
-            {
-                E_mail = "admin@liltarp.dk",
-                Password = "foobar"
-            };
+
+            service.NewTicket(ticket1);
+            service.NewTicket(ticket2);
+            service.NewTicket(ticket3);
+            
 
         }
+
+        
 
         [Test]
         public void SetTicket()
         {
-            service.NewTicket(ticket1);
-            service.NewTicket(ticket2);
-            service.NewTicket(ticket3);
             service.NewTicket(ticket4);
             Assert.AreEqual(4, service.GetTickets().Count);
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID);
         }
         [Test]
         public void SetTicketToSolved()
@@ -123,14 +131,11 @@ namespace UnitTesting
 
 
 
-
-
-
         [Test]
         public void GetUnsolvedTickets()
         {
-            Assert.AreEqual(3, service.GetUnsolvedTickets().Count());
-            Assert.AreEqual(ticket4.Name, service.GetUnsolvedTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).Name);
+            Assert.AreEqual(2, service.GetUnsolvedTickets().Count());
+            Assert.AreEqual(ticket1.Name, service.GetUnsolvedTickets().Find(a => a.E_mail.Equals("runge_3@hotmail.com")).Name);
             
             
         }
@@ -140,13 +145,13 @@ namespace UnitTesting
         public void GetSolvedTickets()
         {
             Assert.AreEqual(1, service.GetSolvedTickets().Count());
-            Assert.AreEqual(ticket3.Name, service.GetSolvedTickets().First().Name);
+            Assert.AreEqual(ticket2.Name, service.GetSolvedTickets().First().Name);
         }
 
         [Test]
         public void GetTicket()
         {
-            Assert.AreEqual(service.GetTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID).Name, ticket4.Name);
+            Assert.AreEqual(service.GetTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge47@hotmail.com")).ID).Name, ticket3.Name);
 
         }
 
@@ -215,10 +220,21 @@ namespace UnitTesting
         [Test]
         public void RemoveTicket()
         {
+            service.NewTicket(ticket4);
+            Assert.AreEqual(service.GetTickets().Count, 4);
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID);
+            Assert.AreEqual(service.GetTickets().Count, 3);
+           
+
+        }
+
+        [TearDown]
+        public void Cleanup()
+        {
             service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID);
             service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge_3@hotmail.com")).ID);
-            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID);
             service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge47@hotmail.com")).ID);
+
         }
     }
 }
