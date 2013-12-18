@@ -81,5 +81,10 @@ namespace DAL
             _model.House.Remove(_model.House.Find(id));
             _model.SaveChanges();
         }
+        public void RemoveTicket(string id)
+        {
+            _model.Ticket.Remove(_model.Ticket.Find(id));
+            _model.SaveChanges();
+        }
     }
 }

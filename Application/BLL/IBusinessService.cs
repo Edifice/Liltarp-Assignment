@@ -45,5 +45,8 @@ namespace BLL
 
         [OperationContract]
         void RemoveHouse(string houseId);
+
+        [OperationContract]
+        List<Ticket> GetTickets();
     }
 }

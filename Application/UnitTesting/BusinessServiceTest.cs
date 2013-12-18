@@ -20,8 +20,8 @@ namespace UnitTesting
         private Ticket ticket2;
         private Ticket ticket3;
         private Ticket ticket4;
-        private House house1;
-        private House house2;
+        private DAL.House house1;
+        private DAL.House house2;
         private User user1;
         private HouseType houseTypeCount;
        
@@ -33,7 +33,7 @@ namespace UnitTesting
 
             ticket1 = new Ticket()
             {
-                ID = "c384c26a-bbf2-4303-800a-dd25504a1c68",
+               
                 Name = "orla runge",
                 E_mail = "runge_3@hotmail.com",
                 Phone = "31213820",
@@ -42,33 +42,32 @@ namespace UnitTesting
             };
             ticket2 = new Ticket()
             {
-                ID = "be07b3c9-b17f-4a23-901b-fb2e89e4dc91",
-                Name = "orla runge",
-                E_mail = "runge_3@hotmail.com",
+               
+                Name = "Wang",
+                E_mail = "runge@hotmail.com",
                 Phone = "31213820",
                 HouseID = "1",
-                UserText = "runge the viking"
+                UserText = "test 2"
             };
 
             ticket3 = new Ticket()
             {
-                ID = "27ad84a9-863b-4364-9b34-ee8c256c9923",
-                Name = "sdfgbr",
-                E_mail = "hgds",
+                
+                Name = "hui",
+                E_mail = "runge47@hotmail.com",
                 Phone = "23456",
                 HouseID = "3",
                 UserText = "test"
             };
             ticket4 = new Ticket()
             {
-                ID = "cf41150c-51d1-4ae2-8766-bcb5b4f4b491",
                 Name = "Daniel",
                 E_mail = "daniel@noob.com",
                 Phone = "6651354",
                 HouseID = "1",
-                UserText = "test two Daniel ... lets see if this works wit ha loong line of text. we dont know but perhaps lets see what happens when we make one that is rly rly fucking long, only coz daniel you pussy"
+                UserText = "test three"
             };
-            house1 = new House()
+            house1 = new DAL.House()
             {
                 ID = "20",
                 TypeID = "3",
@@ -77,7 +76,7 @@ namespace UnitTesting
                 Image = "sm-l/2.jpg"
 
             };
-            house2 = new House()
+            house2 = new DAL.House()
             {
                
                 TypeID = "3",
@@ -91,18 +90,47 @@ namespace UnitTesting
                 E_mail = "admin@liltarp.dk",
                 Password = "foobar"
             };
-            houseTypeCount = new HouseType();
-            {
-                
-            }
+
         }
+
+        [Test]
+        public void SetTicket()
+        {
+            service.NewTicket(ticket1);
+            service.NewTicket(ticket2);
+            service.NewTicket(ticket3);
+            service.NewTicket(ticket4);
+            Assert.AreEqual(4, service.GetTickets().Count);
+        }
+        [Test]
+        public void SetTicketToSolved()
+        {
+            service.SetTicketToSolved((service.GetTickets().Find(a => a.E_mail.Equals("runge47@hotmail.com")).ID), "1");
+            service.SetTicketToSolved((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID), "1");
+            Assert.AreEqual(true, service.GetTicket((service.GetTickets().Find(a => a.E_mail.Equals("runge47@hotmail.com")).ID)).Solved);
+            Assert.AreEqual(true, service.GetTicket((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID)).Solved);
+            
+        }
+        [Test]
+        public void SetTicketToUnSolved()
+        {
+            Assert.AreEqual(true, service.GetTicket((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID)).Solved);
+            service.SetTicketToUnsolved((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID), "1");
+            Assert.AreEqual(false, service.GetTicket((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID)).Solved);
+            Assert.IsNull(service.GetTicket((service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID)).SolvedBy);
+          
+        }
+
+
+
+
 
 
         [Test]
         public void GetUnsolvedTickets()
         {
             Assert.AreEqual(3, service.GetUnsolvedTickets().Count());
-            Assert.AreEqual(ticket1.ID, service.GetUnsolvedTickets().First().ID);
+            Assert.AreEqual(ticket4.Name, service.GetUnsolvedTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).Name);
             
             
         }
@@ -111,14 +139,14 @@ namespace UnitTesting
         [Test]
         public void GetSolvedTickets()
         {
-            Assert.AreEqual(3, service.GetSolvedTickets().Count());
-            Assert.AreEqual(ticket3.ID, service.GetSolvedTickets().First().ID);
+            Assert.AreEqual(1, service.GetSolvedTickets().Count());
+            Assert.AreEqual(ticket3.Name, service.GetSolvedTickets().First().Name);
         }
 
         [Test]
         public void GetTicket()
         {
-            Assert.AreEqual(service.GetTicket("be07b3c9-b17f-4a23-901b-fb2e89e4dc91").ID, ticket2.ID);
+            Assert.AreEqual(service.GetTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID).Name, ticket4.Name);
 
         }
 
@@ -136,6 +164,7 @@ namespace UnitTesting
 
 
         }
+
         [Test]
         public void SetHouse()
         {
@@ -150,9 +179,8 @@ namespace UnitTesting
         [Test]
         public void CheckLogin( )
         {
-
-            Assert.Pass(service.CheckLogin("admin@liltarp", "foobar"));   
-
+            Assert.AreEqual(0, service.CheckLogin("admin@liltarp", "foobar").Length);
+            Assert.AreEqual(36, service.CheckLogin("admin@liltarp.dk", "foobar").Length);
         }
 
         [Test]
@@ -183,20 +211,14 @@ namespace UnitTesting
             Assert.AreEqual(service.GetHouseTypes().First().Name,"SM-T");
         }
 
+
         [Test]
-        public void SetTicketToSolved()
+        public void RemoveTicket()
         {
-            service.SetTicketToSolved("c384c26a-bbf2-4303-800a-dd25504a1c68", "1");
-            Assert.AreEqual(true, service.GetTicket("c384c26a-bbf2-4303-800a-dd25504a1c68").Solved);
-            service.SetTicketToUnsolved("c384c26a-bbf2-4303-800a-dd25504a1c68", "1");
-        }
-        [Test]
-        public void SetTicketToUnSolved()
-        {
-            service.SetTicketToUnsolved("be07b3c9-b17f-4a23-901b-fb2e89e4dc91","1");
-            Assert.AreEqual(false, service.GetTicket("be07b3c9-b17f-4a23-901b-fb2e89e4dc91").Solved);
-            Assert.IsNull(service.GetTicket("be07b3c9-b17f-4a23-901b-fb2e89e4dc91").SolvedBy);
-            service.SetTicketToSolved("be07b3c9-b17f-4a23-901b-fb2e89e4dc91", "1");
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge@hotmail.com")).ID);
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge_3@hotmail.com")).ID);
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("daniel@noob.com")).ID);
+            service.RemoveTicket(service.GetTickets().Find(a => a.E_mail.Equals("runge47@hotmail.com")).ID);
         }
     }
 }

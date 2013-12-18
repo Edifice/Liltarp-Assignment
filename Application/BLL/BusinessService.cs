@@ -96,18 +96,7 @@ namespace BLL
 
         public void NewTicket(Ticket ticket)
         {
-            var tick = new Ticket
-            {
-                IdSerializable = ticket.IdSerializable,
-                NameSerializable = ticket.NameSerializable,
-                EmailSerializable = ticket.EmailSerializable,
-                PhoneSerializable = ticket.PhoneSerializable,
-                HouseIdSerializable = ticket.HouseIdSerializable,
-                SolvedBySerializable = ticket.SolvedBySerializable,
-                SolvedSerializable = ticket.SolvedSerializable,
-                UserTextSerializable = ticket.UserTextSerializable
-            };
-            _rep.UpdateTicket(tick);
+            _rep.UpdateTicket(ticket);
         }
 
         public void SetTicketToSolved(string ticketId, string solver)
@@ -136,7 +125,10 @@ namespace BLL
             _rep.RemoveHouse(houseId);
         }
 
-
+        public List<Ticket> GetTickets()
+        {
+            return _rep.GetTickets().Select(TranslateTickets).ToList();
+        }
         public Ticket GetTicket(string idSerializable)
         {
             return _rep.GetTickets().First(a => a.ID.Equals(idSerializable));
@@ -152,6 +144,11 @@ namespace BLL
         public List<Ticket> GetUnsolvedTickets()
         {
             return _rep.GetTickets().Where(a => a.Solved != true).Select(TranslateTickets).ToList();
+        }
+
+        public void RemoveTicket(string ticketId)
+        {
+            _rep.RemoveTicket(ticketId);
         }
     }
 }
